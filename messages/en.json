@@ -1,0 +1,20 @@
+{
+    "welcome_message": "Welcome to my portfolio",
+    "nav": {
+      "name": "Maxime Carpentier",
+      "slogan": "Code, Creativity & Innovation",
+      "home": "Home",
+      "about": "About",
+      "projects": "Projects",
+      "contact": "Contact"
+    },
+    "hero": {
+      "title": "Web developer",
+      "subtitle": "I create modern and efficient websites"
+    },
+    "presentation": {
+      "title": "About me",
+      "content": "I am a web developer passionate about creating modern and efficient websites. I like working with the latest technologies to offer an optimal user experience."
+    }
+  }
+  
