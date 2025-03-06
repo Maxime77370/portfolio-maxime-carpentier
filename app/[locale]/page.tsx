@@ -6,6 +6,7 @@ import Hero from 'components/hero';
 import Presentation from 'components/presentation';
 import ProjectTimeline from '../components/project-timeline';
 import LanguageGrid from '../components/language-grid';
+import Footer from '../components/footer';
 
 export default function HomePage() {
   return (
@@ -15,9 +16,7 @@ export default function HomePage() {
       <Presentation />
       <ProjectTimeline />
       <LanguageGrid />
-      <footer className="text-center text-grey-700 py-4">
-        <p>&copy; 2025 - Carpentier Maxime - Tous droits réservés</p>
-      </footer>
+      <Footer />
     </div>
   );
 }

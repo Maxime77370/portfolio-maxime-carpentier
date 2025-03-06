@@ -9,12 +9,172 @@
       "contact": "Contact"
     },
     "hero": {
+      "0":{ 
       "title": "Développeur web",
       "subtitle": "Je crée des sites web modernes et performants"
-    },
+      },
+      "1": {
+      "title": "Développeur front\u2011end",
+      "subtitle": "Je développe des interfaces utilisateur avec les dernières technologies"
+      },
+      "2": {
+      "title": "Développeur back\u2011end",
+      "subtitle": "Je crée des API et des bases de données pour stocker et récupérer des données"
+      }
+    },  
     "presentation": {
       "title": "À propos de moi",
-      "content": "Je suis un développeur web passionné par la création de sites web modernes et performants. J'aime travailler avec les dernières technologies pour offrir une expérience utilisateur optimale."
-    }
+      "loisirs": "Loisirs",
+      "shortContent": "Étudiant en 4ᵉ année à Epitech Lille, passionné par l’informatique et les nouvelles technologies depuis mes 14 ans.",
+      "learnMore": "En savoir plus",
+      "modalTitle": "À propos de moi",
+      "fullContent": "Je recherche une alternance d’un an et demi pour mettre en pratique mes compétences. Mon rythme 2 jours à l’école, 3 en entreprise me permet d’être rapidement opérationnel et pleinement investi dans les projets qui me sont confiés.",
+      "resumeTitle": "Mon Profil",
+      "close": "Fermer"
+    },
+      "header": {
+        "name": "Maxime Carpentier",
+        "title": "Développeur Fullstack en Alternance",
+        "linkedin": "LinkedIn",
+        "github": "GitHub"
+      },
+      "expertise": {
+        "title": "Expertises",
+        "item1": "Création d'API REST & GraphQL",
+        "item2": "Gestion de bases de données",
+        "item3": "Travail en équipe & Design Thinking"
+      },
+      "timeline": {
+        "swimming": {
+          "title": "Piscine",
+          "description": "À 6 ans - Compétitif jusqu'à 17 ans"
+        },
+        "piano": {
+          "title": "Piano",
+          "description": "À 7 ans - Toujours en pratique"
+        },
+        "informatique": {
+          "title": "Informatique",
+            "description": "À 14 ans - Étudiant à Epitech depuis 2023"
+        },
+        "art": {
+          "title": "Art et Design",
+          "description": "De 2021 à 2023"
+        }
+    },
+      "projects": {
+        "trading-chart-ai": {
+          "type": "project",
+          "title": "Trading Chart IA",
+          "description": "Application web pour prédire les cours de la bourse. Elle affiche des indicateurs de trading, récupère des données via une API, stocke les informations dans une base de données et les traite avec un modèle de machine learning.",
+          "technologies": "Python, TensorFlow, PyGame",
+          "link": "https://trading-chart-ia.maximecarpentier.com",
+          "date": "2020-01"
+        },
+        "machine-learning-experiment": {
+          "type": "project",
+          "title": "Machine Learning Experiment",
+          "description": "Expérience en machine learning visant à réaliser des prédictions et à développer un agent capable d'apprendre à jouer à un jeu.",
+          "technologies": "Python, PyGame",
+          "link": "https://machine-learning-experiment.maximecarpentier.com",
+          "date": "2022-02"
+        },
+        "medieval-tower": {
+          "type": "project",
+          "title": "Medieval Tower",
+          "description": "Jeu 2D inspiré de Mario, intégrant la gestion des entités via des classes Java, un moteur de jeu 2D personnalisé et un style médiéval, développé dans le cadre d'un projet à Epitech.",
+          "technologies": "Java, LibGDX",
+          "link": "https://medieval-tower.maximecarpentier.com",
+          "date": "2024-01"
+        },
+        "portfolio-first": {
+          "type": "project",
+          "title": "Premier Portfolio",
+          "description": "Site web de présentation de mes projets.",
+          "technologies": "HTML, CSS, JavaScript, Express, Node.js",
+          "link": "https://portfolio.maximecarpentier.com",
+          "date": "2024-05"
+        },
+        "le-costumier": {
+          "type": "project",
+          "title": "Le Costumier",
+          "description": "Site web d'un magasin de vêtements élégant et moderne.",
+          "technologies": "TypeScript, React, Vite, Tailwind CSS, Stripe, Symfony, PHP",
+          "link": "https://le-costumier.maximecarpentier.com",
+          "date": "2024-06"
+        },
+        "dino-runner-ai": {
+          "type": "project",
+          "title": "Dino Runner IA",
+          "description": "Jeu inspiré du Dino de Google, intégrant un entraînement parallèle et le développement d'une IA de machine learning pour jouer automatiquement.",
+          "technologies": "Python, PyGame",
+          "link": "https://dino-runner-ia.maximecarpentier.com",
+          "date": "2024-07"
+        },
+        "job-hunters": {
+          "type": "project",
+          "title": "JobHunters",
+          "description": "Application web permettant de rechercher des offres d'emploi, réalisée dans le cadre d'un projet à Epitech.",
+          "technologies": "HTML, CSS, JavaScript, Python",
+          "link": "https://jobhunters.maximecarpentier.com",
+          "date": "2024-12"
+        },
+        "this-portfolio": {
+          "type": "project",
+          "title": "Mon Portfolio",
+          "description": "Site web présentant mes projets et mon profil.",
+          "technologies": "TypeScript, React, Next.js, Tailwind CSS, Motion",
+          "link": "https://portfolio.maximecarpentier.com",
+          "date": "2025-02"
+        },
+        
+        "epitech-lille": {
+          "type": "school",
+          "title": "Epitech Lille",
+          "description": "Formation sur 5 ans orientée autour de projets, mettant l’accent sur l’autonomie, l’innovation et la pratique intensive du développement.",
+          "location": "Beaux Arts, Lille",
+          "date": "2020-09"
+        },
+    
+        "karbon": {
+          "type": "job",
+          "title": "Développeur Fullstack chez Karbon",
+          "description": "Stage / Alternance où j’ai participé au développement d’applications web, avec une équipe agile, gestion de bases de données et intégration continue.",
+          "technologies": "TypeScript, React, Node.js, Docker",
+          "location": "Euratechnologies, Lille",
+          "date": "2024-06"
+        },
+        "prepa-cpge": {
+          "type": "school",
+          "title": "CPGE, Technologie et Sciences Industrielles",
+          "description": "Deux ans de préparation aux concours des écoles d’ingénieurs, avec une spécialisation en Sciences de l’Ingénieur.",
+          "location": "Lycée Pierre de Coubertin, Meaux",
+          "date": "2021-09"
+        },
+        "baccalaureat": {
+          "type": "diploma",
+          "title": "Baccalauréat STI2D",
+          "description": "Spécialité SIN (Systèmes d’Information et Numérique) - Mention Bien",
+          "location": "Lycée La Fayette, Champagne-sur-Seine",
+          "date": "2021-07"
+        },
+        "hillgrove-hotel": {
+          "type": "job",
+          "title": "Agent d’entretien en Irlande",
+          "description": "Travail en équipe dans un environnement anglophone. Gestion du nettoyage et de l’entretien des chambres pour garantir une prestation de qualité.",
+          "location": "Irlande, Monaghan",
+          "date": "2022-07"
+        },
+        "sopra-banking": {
+          "type": "job",
+          "title": "Stage de Découverte chez Sopra Banking Software",
+          "description": "Observation du développement d’un logiciel bancaire visant à optimiser le volume des transactions.",
+          "location": "France, Montreuil",
+          "date": "2019-01"
+        }
+      },
+      "footer": {
+        "rights": "Tous droits réservés"
+      }
   }
   

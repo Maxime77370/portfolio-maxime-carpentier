@@ -1,20 +1,126 @@
 {
-    "welcome_message": "Welcome to my portfolio",
-    "nav": {
-      "name": "Maxime Carpentier",
-      "slogan": "Code, Creativity & Innovation",
-      "home": "Home",
-      "about": "About",
-      "projects": "Projects",
-      "contact": "Contact"
+  "welcome_message": "Welcome to my portfolio",
+  "nav": {
+    "name": "Maxime Carpentier",
+    "slogan": "Code, Creativity & Innovation",
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "0": {
+      "title": "Web Developer",
+      "subtitle": "I create modern and high-performance websites"
     },
-    "hero": {
-      "title": "Web developer",
-      "subtitle": "I create modern and efficient websites"
+    "1": {
+      "title": "Front-end Developer",
+      "subtitle": "I develop user interfaces using the latest technologies"
     },
-    "presentation": {
-      "title": "About me",
-      "content": "I am a web developer passionate about creating modern and efficient websites. I like working with the latest technologies to offer an optimal user experience."
+    "2": {
+      "title": "Back-end Developer",
+      "subtitle": "I build APIs and databases to store and retrieve data"
     }
+  },
+  "presentation": {
+    "title": "About me",
+    "loisirs": "Hobbies",
+    "shortContent": "I’m a 4th-year student at Epitech Lille, passionate about computing and new technologies since I was 14.",
+    "learnMore": "Learn more",
+    "modalTitle": "About me",
+    "fullContent": "I’m looking for an 18-month apprenticeship to apply my skills. My 2-day school, 3-day company schedule lets me quickly become operational and fully invested in the projects entrusted to me.",
+    "resumeTitle": "My Profile",
+    "close": "Close"
+  },
+  "header": {
+    "name": "Maxime Carpentier",
+    "title": "Fullstack Developer in Apprenticeship",
+    "linkedin": "LinkedIn",
+    "github": "GitHub"
+  },
+  "expertise": {
+    "title": "Expertise",
+    "item1": "Creation of REST & GraphQL APIs",
+    "item2": "Database management",
+    "item3": "Teamwork & Design Thinking"
+  },
+  "timeline": {
+    "swimming": {
+      "title": "Swimming",
+      "description": "At 6 years old – Competitive until 17"
+    },
+    "piano": {
+      "title": "Piano",
+      "description": "At 7 years old – Still practicing"
+    },
+    "informatique": {
+      "title": "Computing",
+      "description": "At 14 years old – Epitech student since 2023"
+    },
+    "art": {
+      "title": "Art and Design",
+      "description": "From 2021 to 2023"
+    }
+  },
+  "projects": {
+    "trading-chart-ai": {
+      "title": "Trading Chart AI",
+      "description": "Web application that predicts stock market prices. It displays trading indicators, retrieves data via an API, stores information in a database, and processes it with a machine learning model.",
+      "technologies": "Python, TensorFlow, PyGame",
+      "link": "https://trading-chart-ia.maximecarpentier.com",
+      "date": "2020"
+    },
+    "machine-learning-experiment": {
+      "title": "Machine Learning Experiment",
+      "description": "A machine learning experiment aiming to make predictions and develop an agent capable of learning to play a game.",
+      "technologies": "Python, PyGame",
+      "link": "https://machine-learning-experiment.maximecarpentier.com",
+      "date": "2022"
+    },
+    "medieval-tower": {
+      "title": "Medieval Tower",
+      "description": "A 2D game inspired by Mario, including entity management through Java classes, a custom 2D game engine, and a medieval aesthetic, developed as part of an Epitech project.",
+      "technologies": "Java, LibGDX",
+      "link": "https://medieval-tower.maximecarpentier.com",
+      "date": "January 2024"
+    },
+    "portfolio-first": {
+      "title": "First Portfolio",
+      "description": "A website showcasing my projects.",
+      "technologies": "HTML, CSS, JavaScript, Express, Node.js",
+      "link": "https://portfolio.maximecarpentier.com",
+      "date": "May 2024"
+    },
+    "le-costumier": {
+      "title": "Le Costumier",
+      "description": "A stylish and modern clothing store website.",
+      "technologies": "TypeScript, React, Vite, Tailwind CSS, Stripe, Symfony, PHP",
+      "link": "https://le-costumier.maximecarpentier.com",
+      "date": "June 2024"
+    },
+    "dino-runner-ai": {
+      "title": "Dino Runner AI",
+      "description": "A game inspired by Google's Dino, featuring parallel training and the development of a machine learning AI to play automatically.",
+      "technologies": "Python, PyGame",
+      "link": "https://dino-runner-ia.maximecarpentier.com",
+      "date": "July 2024"
+    },
+    "job-hunters": {
+      "title": "JobHunters",
+      "description": "A web application to search for job offers, developed as part of an Epitech project.",
+      "technologies": "HTML, CSS, JavaScript, Python",
+      "link": "https://jobhunters.maximecarpentier.com",
+      "date": "December 2024"
+    },
+    "this-portfolio": {
+      "title": "My Portfolio",
+      "description": "A website showcasing my projects and my profile.",
+      "technologies": "TypeScript, React, Next.js, Tailwind CSS, Motion",
+      "link": "https://portfolio.maximecarpentier.com",
+      "date": "February 2025"
+    }
+  },
+  "footer": {
+    "rights": "All rights reserved"
   }
-  
+}

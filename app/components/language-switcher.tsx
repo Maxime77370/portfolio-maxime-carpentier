@@ -44,7 +44,7 @@ const LanguageSwitcher: React.FC = () => {
     <div className="relative inline-block text-left" ref={containerRef}>
       <button
         type="button"
-        className="inline-flex items-center rounded-md bg-white px-2 py-1 text-sm text-gray-900 focus:ring-2 focus:ring-indigo-600"
+        className="inline-flex items-center rounded-md transition-colors bg-indigo-700 hover:bg-indigo-600 px-2 py-1 text-sm text-white focus:ring-2 focus:ring-indigo-600"
         aria-haspopup="true"
         onClick={() => setIsOpen(prev => !prev)}
       >

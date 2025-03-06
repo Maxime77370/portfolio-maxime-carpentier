@@ -1,20 +1,20 @@
 "use client";
 
-import React from "react";
+import React, { useRef, useState } from "react";
 import Image from "next/image";
 import * as motion from "motion/react-client";
 
-// -- Exemple de listes de technologies par catégorie
+// --- Exemple de listes de technologies par catégorie
 const frontEnd = [
   { name: "HTML", logo: "/logos/html.webp" },
   { name: "CSS", logo: "/logos/css.webp" },
   { name: "JavaScript", logo: "/logos/js.webp" },
   { name: "TypeScript", logo: "/logos/typescript.png" },
   { name: "React", logo: "/logos/react.jpeg" },
+  { name: "Bootstrap", logo: "/logos/bootstrap.png" },
   { name: "Next.js", logo: "/logos/nextjs.png" },
   { name: "NestJS", logo: "/logos/nestjs.png" },
   { name: "Tailwind CSS", logo: "/logos/tailwind.png" },
-  { name: "Bootstrap", logo: "/logos/bootstrap.png" },
 ];
 
 const backEnd = [
@@ -23,7 +23,10 @@ const backEnd = [
   { name: "Python", logo: "/logos/python.png" },
   { name: "Java", logo: "/logos/java.png" },
   { name: "Prisma", logo: "/logos/prisma.svg" },
-  { name: "Apache", logo: "/logos/apache.png" },
+  { name: "GraphQL", logo: "/logos/graphql.png" },
+  { name: "Apollo", logo: "/logos/apollo.jpeg" },
+  { name: "REST API", logo: "/logos/rest-api.png" },
+  { name: "Socket.io", logo: "/logos/socketio.png" },
 ];
 
 const devOps = [
@@ -34,121 +37,145 @@ const devOps = [
   { name: "PostgreSQL", logo: "/logos/postgresql.png" },
 ];
 
-export default function LanguageGrid() {
+// Variants pour l'animation des cercles en cascade
+const circleContainerVariants = {
+  initial: {},
+  animate: {
+    transition: {
+      when: "beforeChildren",
+      staggerChildren: 0.25, // délai entre l'apparition de chaque cercle
+    },
+  },
+};
+
+const circleVariants = {
+  initial: { opacity: 0, scale: 0.8 },
+  animate: { opacity: 1, scale: 1 },
+};
+
+const columns = [
+  {
+    title: "Back-end",
+    data: backEnd,
+    initialScale: 0.8,
+  },
+  {
+    title: "Front-end",
+    data: frontEnd,
+    initialScale: 0.8,
+  },
+  {
+    title: "DevOps - DataBase",
+    data: devOps,
+    initialScale: 0.8,
+  },
+];
+
+// Composant d’une colonne animée
+function Column({ title, data, initialScale }: any) {
+
   return (
-    <div className="relative w-full max-w-5xl mx-auto -mt-1">
-      {/* -- L’image du cadre (Shape) -- */}
-      <div className="relative">
-        <Image
-          src="/shape/shape-4.webp"
-          alt="Shape 4"
-          width={1000}
-          height={500}
-          className="mx-auto w-full h-auto object-contain opacity-50"
-        />
-      </div>
-
-      {/* 
-        Conteneur en position absolue au-dessus de l’image (inset-0). 
-        On y place un fond gris semi-transparent.
-      */}
-      <div className="absolute inset-0 flex items-center justify-center">
-        {/* Conteneur qui applique le fond semi-transparent */}
-        <div className="bg-gray-900/30 backdrop-blur-xs p-6 md:p-8 max-w-5xl w-full max-h-7/10 h-full mx-auto">
-          {/* 
-            On crée une grille de 3 colonnes (Front-end, Back-end, DevOps). 
-            Sur mobile, 1 colonne (grid-cols-1), sur écrans moyens/large, 3 (md:grid-cols-3).
-          */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-
-            {/* ----------------------- Colonne BACK-END ----------------------- */}
-            <div>
-              <h2 className="text-center text-white font-bold text-xl mb-4">
-                Back-end
-              </h2>
-              <div className="flex flex-wrap justify-center gap-6">
-                {backEnd.map((tech, index) => (
-                  <motion.div
-                    key={tech.name}
-                    className="flex flex-col items-center"
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                  >
-                    <div className="w-16 h-16 rounded-full bg-white shadow-md flex items-center justify-center">
-                      <Image
-                        src={tech.logo}
-                        alt={tech.name}
-                        width={32}
-                        height={32}
-                      />
-                    </div>
-                    <p className="mt-2 text-white">{tech.name}</p>
-                  </motion.div>
-                ))}
+    <motion.div
+      // Animation de la colonne entière (déplacement horizontal)
+      initial={{ opacity: 0, scale: initialScale }}
+      whileInView={{
+        opacity: 1,
+        scale: 1,
+        transition: { duration: 0.6 },
+      }}
+      viewport={{ once: true }}
+      className="w-full"
+    >
+      <h2 className="text-center text-white font-bold text-xl mb-4">{title}</h2>
+      {/* Container des cercles avec stagger */}
+      <motion.div
+        className="grid grid-cols-3 gap-2 sm:gap-4 md:gap-6"
+        variants={circleContainerVariants}
+        initial="initial"
+        whileInView="animate"
+        viewport={{ once: true }}
+      >
+        <React.Fragment>
+          {data.map((tech: any) => (
+            <motion.div
+              key={tech.name}
+              className="flex flex-col items-center"
+              variants={circleVariants}
+              transition={{ duration: 0.5 }}
+            >
+              <div className="w-12 h-12 md:h-14 md:w-14 lg:h-18 lg:w-18 rounded-full bg-white shadow-md flex items-center justify-center">
+                <Image
+                  src={tech.logo}
+                  alt={tech.name}
+                  width={36}
+                  height={36}
+                />
               </div>
-            </div>
+              <p className="mt-1 sm:mt-2 text-white text-xs sm:text-sm md:text-lg whitespace-nowrap text-center">{tech.name}</p>
+            </motion.div>
+          ))}
+        </React.Fragment>
+      </motion.div>
+    </motion.div>
+  );
+}
+export default function LanguageGrid() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [containerHeight, setContainerHeight] = useState<number | string>(0);
 
-            {/* ----------------------- Colonne FRONT-END ----------------------- */}
-            <div>
-              <h2 className="text-center text-white font-bold text-xl mb-4">
-                Front-end
-              </h2>
-              <div className="flex flex-wrap justify-center gap-6">
-                {frontEnd.map((tech, index) => (
-                  <motion.div
-                    key={tech.name}
-                    className="flex flex-col items-center"
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                  >
-                    {/* Cercle blanc contenant le logo */}
-                    <div className="w-16 h-16 rounded-full bg-white shadow-md flex items-center justify-center">
-                      <Image
-                        src={tech.logo}
-                        alt={tech.name}
-                        width={32}
-                        height={32}
-                      />
-                    </div>
-                    {/* Nom de la techno */}
-                    <p className="mt-2 text-white">{tech.name}</p>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
+  // Mettre à jour la hauteur du container lors du montage et du redimensionnement
+  React.useEffect(() => {
+    function updateHeight() {
+      if (containerRef.current && window.innerWidth < 768) {
+        setContainerHeight(containerRef.current.clientWidth);
+      } else {
+        setContainerHeight("100%");
+      }
+    }
+    updateHeight();
+    window.addEventListener("resize", updateHeight);
+    return () => window.removeEventListener("resize", updateHeight);
+  }, []);
 
-            {/* ----------------------- Colonne DEVOPS ----------------------- */}
-            <div>
-              <h2 className="text-center text-white font-bold text-xl mb-4">
-                DevOps - DataBase
-              </h2>
-              <div className="flex flex-wrap justify-center gap-6">
-                {devOps.map((tech, index) => (
-                  <motion.div
-                    key={tech.name}
-                    className="flex flex-col items-center"
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                  >
-                    <div className="w-16 h-16 rounded-full bg-white shadow-md flex items-center justify-center">
-                      <Image
-                        src={tech.logo}
-                        alt={tech.name}
-                        width={32}
-                        height={32}
-                      />
-                    </div>
-                    <p className="mt-2 text-white">{tech.name}</p>
-                  </motion.div>
-                ))}
-              </div>
+  return (
+    <div className="overflow-hidden relative md:max-w-5xl md:mx-auto md:-mt-1" style={{ height: containerHeight }}>
+      {/* Conteneur interne pour séparer l'image (rotative) de l'overlay */}
+      <div className="-mt-14 md:mt-0">
+        {/* Image du cadre (Shape) avec rotation responsive */}
+        <div className="w-full rotate-90 md:rotate-0">
+          <Image
+            src="/shape/shape-4.webp"
+            alt="Shape 4"
+            width={1200}
+            height={800}
+            className="max-w-none w-[180vw] md:w-[100%] opacity-50"
+            ref={containerRef}
+          />
+        </div>
+        {/* Overlay semi-transparent par-dessus l'image (non affecté par la rotation) */}
+        <div
+          className="absolute inset-0 md:flex items-center justify-center"
+          style={{ height: containerHeight }}
+        >
+          <div className="overflow-scroll bg-gray-900/30 backdrop-blur-sm py-0 px-0 md:px-8 max-w-[85%] md:max-w-5xl w-full md:max-h-7/10 md:h-full mx-auto flex md:items-center justify-center" style={{ height: containerHeight }}>
+            {/* Grille responsive : 1 colonne sur mobile, 3 colonnes sur md+ */}
+            <div className="w-full grid grid-cols-1 md:grid-cols-3 p-4 gap-4 md:gap-8 relative">
+              {columns.map((col, index) => (
+                <React.Fragment key={col.title}>
+                  <Column
+                    title={col.title}
+                    data={col.data}
+                    initialScale={col.initialScale}
+                  />
+                  {index < columns.length - 1 && (
+                    <div className="hidden md:block absolute inset-y-0 w-px bg-gray-300" style={{ left: `calc(${(index + 1) * 33.33}% + ${index == 1 ? 8 : -6}px)` }} />
+                  )}
+                </React.Fragment>
+              ))}
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </div >
   );
 }
