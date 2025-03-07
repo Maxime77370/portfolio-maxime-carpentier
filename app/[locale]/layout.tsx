@@ -1,6 +1,5 @@
-
-
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/react";
 import { Geist, Geist_Mono } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
@@ -29,9 +28,7 @@ type RootLayoutProps = {
 export default async function RootLayout(props: RootLayoutProps) {
   const params = await props.params;
 
-  const {
-    children
-  } = props;
+  const { children } = props;
 
   let messages;
   try {
@@ -42,12 +39,14 @@ export default async function RootLayout(props: RootLayoutProps) {
 
   return (
     <html lang={params.locale}>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
         <NextIntlClientProvider locale={params.locale} messages={messages}>
           {children}
+          <Analytics />
         </NextIntlClientProvider>
       </body>
     </html>
   );
 }
-
