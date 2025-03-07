@@ -1,4 +1,4 @@
-import * as motion from "motion/react-client";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import LanguageSwitcher from "./language-switcher";
 import { useTranslations } from "next-intl";
@@ -131,40 +131,43 @@ export default function NavBar() {
             </div>
 
             {/* Menu mobile (slide-down) : visible seulement quand menuOpen est true, caché en md+ */}
-            {menuOpen && (
-                <motion.div
-                    className="md:hidden bg-black/5"
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: "auto", opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3 }}
-                >
-                    <div className="flex w-full py-4 justify-between px-4">
-                        {/* LanguageSwitcher en mobile */}
-                        <div className="flex flex-col space-y-2">
-                            {navItems.map((item, index) => (
-                                <motion.a
-                                    key={index}
-                                    href={item.href}
-                                    className="block text-gray-300 hover:text-white transition-colors text-md"
-                                    initial={{ opacity: 0, x: 20 }}
-                                    animate={{ opacity: 1, x: 0 }}
-                                    transition={{ delay: 0.1 + index * 0.05, duration: 0.4 }}
-                                    whileHover={{
-                                        scale: 1.05,
-                                        transition: { type: "spring", stiffness: 300 },
-                                    }}
-                                    onClick={() => setMenuOpen(false)} // Fermer le menu au clic
-                                >
-                                    {t(`nav.${item.key}`)}
-                                </motion.a>
-                            ))}
+
+            <AnimatePresence>
+                {menuOpen && (
+                    <motion.div
+                        className="md:hidden bg-black/5"
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                    >
+                        <div className="flex w-full py-4 justify-between px-4">
+                            {/* LanguageSwitcher en mobile */}
+                            <div className="flex flex-col space-y-2">
+                                {navItems.map((item, index) => (
+                                    <motion.a
+                                        key={index}
+                                        href={item.href}
+                                        className="block text-gray-300 hover:text-white transition-colors text-md"
+                                        initial={{ opacity: 0, x: 20 }}
+                                        animate={{ opacity: 1, x: 0 }}
+                                        transition={{ delay: 0.1 + index * 0.05, duration: 0.4 }}
+                                        whileHover={{
+                                            scale: 1.05,
+                                            transition: { type: "spring", stiffness: 300 },
+                                        }}
+                                        onClick={() => setMenuOpen(false)} // Fermer le menu au clic
+                                    >
+                                        {t(`nav.${item.key}`)}
+                                    </motion.a>
+                                ))}
+                            </div>
+                            <LanguageSwitcher />
                         </div>
-                        <LanguageSwitcher />
-                    </div>
-                </motion.div >
-            )
-            }
+                    </motion.div >
+                )
+                }
+            </AnimatePresence>
         </motion.nav >
     );
 }
