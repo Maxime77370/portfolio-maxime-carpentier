@@ -20,7 +20,6 @@ interface TimelineItemProps {
 
 // Icône selon le type
 function getTypeIcon(type: "project" | "school" | "job" | "diploma") {
-    console.log(type);
     switch (type) {
         case "project":
             return <FaProjectDiagram size={18} />;
