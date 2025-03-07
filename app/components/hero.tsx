@@ -299,7 +299,6 @@ export default function Hero() {
         toColor="#4c1d95"
         ballColor="rgba(236, 72, 153,0.5)"
       />
-      xl
       <ShapeImage
         shapeIndex={shapeIndex}
         direction={direction}
