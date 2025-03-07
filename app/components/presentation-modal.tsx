@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -79,8 +77,7 @@ const PortfolioModal: React.FC<PortfolioModalProps> = ({ onClose }) => {
         fixed inset-0 bg-black/50 z-50
         flex items-center justify-center
         px-2 sm:px-4 py-4
-        overflow-x-hidden
-      "
+        overflow-x-hidden"
             variants={overlayVariants}
             initial="hidden"
             animate="visible"

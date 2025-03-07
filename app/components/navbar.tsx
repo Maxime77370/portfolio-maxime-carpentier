@@ -1,5 +1,3 @@
-"use client";
-
 import * as motion from "motion/react-client";
 import Image from "next/image";
 import LanguageSwitcher from "./language-switcher";
@@ -9,7 +7,7 @@ import { useState } from "react";
 const navItems = [
     { key: "home", href: "#" },
     { key: "about", href: "#about" },
-    { key: "projects", href: "#projects" },
+    { key: "timeline", href: "#timeline" },
     { key: "contact", href: "#contact" },
 ];
 
@@ -122,6 +120,7 @@ export default function NavBar() {
                                     scale: 1.05,
                                     transition: { type: "spring", stiffness: 300 },
                                 }}
+                                whileTap={{ scale: 0.95 }}
                             >
                                 {t(`nav.${item.key}`)}
                             </motion.a>

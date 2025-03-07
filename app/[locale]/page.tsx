@@ -4,7 +4,7 @@ import React from 'react';
 import NavBar from 'components/navbar';
 import Hero from 'components/hero';
 import Presentation from 'components/presentation';
-import ProjectTimeline from '../components/project-timeline';
+import ProjectTimeline from '../components/timeline';
 import LanguageGrid from '../components/language-grid';
 import Footer from '../components/footer';
 

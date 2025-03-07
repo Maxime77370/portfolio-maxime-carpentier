@@ -1,5 +1,3 @@
-"use client";
-
 import { motion, AnimatePresence, useAnimation } from "framer-motion";
 import AnimatedBackground from "./animated-background";
 import { useTranslations } from "next-intl";
@@ -113,7 +111,7 @@ export default function Hero() {
     }, [shapeControls]);
 
     const handleScroll = () => {
-        const presentationSection = document.getElementById("presentation");
+        const presentationSection = document.getElementById("about");
         if (presentationSection) {
             presentationSection.scrollIntoView({ behavior: "smooth" });
         }

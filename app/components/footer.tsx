@@ -1,5 +1,3 @@
-"use client";
-
 import { FaGithub, FaLinkedin, FaEnvelope, FaPhone } from "react-icons/fa";
 import * as motion from "motion/react-client";
 import { useTranslations } from "next-intl";

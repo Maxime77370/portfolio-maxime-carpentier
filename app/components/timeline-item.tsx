@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import { motion, Variants } from "framer-motion";
 import {
@@ -9,21 +7,10 @@ import {
     FaSchool,
     FaGraduationCap,
 } from "react-icons/fa";
-import { useTranslations } from "next-intl";
-
-interface TimelineItemData {
-    key: string;
-    type: "project" | "school" | "job" | "diploma";
-    startDate: string;
-    endDate?: string;
-    title?: string;
-    description?: string;
-    technologies?: string;
-    link?: string;
-}
+import { DictionaryItem } from "./timeline-dict";
 
 interface TimelineItemProps {
-    item: TimelineItemData;
+    item: DictionaryItem;
     index: number;
     offset: number;
     onSelect: (key: string) => void;
@@ -94,9 +81,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
     totalCount,
     textChildren,
 }) => {
-    const { key, type, startDate, title } = item;
-
-    const t = useTranslations("projects");
+    const { type, date, title, key } = item;
 
     const isLeft = (index + offset) % 2 === 0;
     const reverseIndex = totalCount - index - 1;
@@ -178,8 +163,8 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
                 {getTypeIcon(type)}
             </div>
             <div className="join-item px-3 py-2 flex-1 flex items-center justify-between gap-2">
-                <h3 className="font-extrabold text-gray-900">{title || t(`${key}.title`)}</h3>
-                <span className="text-sm text-gray-500 text-right">{formatDate(startDate)}</span>
+                <h3 className="font-extrabold text-gray-900">{title}</h3>
+                <span className="text-sm text-gray-500 text-right">{formatDate(date)}</span>
             </div>
             <motion.button
                 onClick={() => onSelect(key)}
@@ -206,10 +191,10 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
             )}
             <div className="mx-4">
                 <h3 className="text-sm md:text-lg text-gray-900 font-bold leading-tight">
-                    {title || t(`${key}.title`)}
+                    {title}
                 </h3>
                 <span className="text-xs md:text-sm text-gray-500">
-                    {formatDate(startDate)}
+                    {formatDate(date)}
                 </span>
             </div>
             {side === "right" && (

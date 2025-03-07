@@ -5,7 +5,7 @@
       "slogan": "Code, Créativité & Innovation",
       "home": "Accueil",
       "about": "À propos",
-      "projects": "Projets",
+      "timeline": "Chronologie",
       "contact": "Contact"
     },
     "hero": {
@@ -68,7 +68,7 @@
           "title": "Trading Chart IA",
           "description": "Application web pour prédire les cours de la bourse. Elle affiche des indicateurs de trading, récupère des données via une API, stocke les informations dans une base de données et les traite avec un modèle de machine learning.",
           "technologies": "Python, TensorFlow, PyGame",
-          "link": "https://trading-chart-ia.maximecarpentier.com",
+          "link": "https://github.com/Maxime77370/Trading-Chart-IA",
           "date": "2020-01"
         },
         "machine-learning-experiment": {
@@ -76,7 +76,7 @@
           "title": "Machine Learning Experiment",
           "description": "Expérience en machine learning visant à réaliser des prédictions et à développer un agent capable d'apprendre à jouer à un jeu.",
           "technologies": "Python, PyGame",
-          "link": "https://machine-learning-experiment.maximecarpentier.com",
+          "link": "https://github.com/Maxime77370/Machine-learing-experiment",
           "date": "2022-02"
         },
         "medieval-tower": {
@@ -84,7 +84,7 @@
           "title": "Medieval Tower",
           "description": "Jeu 2D inspiré de Mario, intégrant la gestion des entités via des classes Java, un moteur de jeu 2D personnalisé et un style médiéval, développé dans le cadre d'un projet à Epitech.",
           "technologies": "Java, LibGDX",
-          "link": "https://medieval-tower.maximecarpentier.com",
+          "link": "https://github.com/Maxime77370/Medieval-Tower",
           "date": "2024-01"
         },
         "portfolio-first": {
@@ -92,7 +92,7 @@
           "title": "Premier Portfolio",
           "description": "Site web de présentation de mes projets.",
           "technologies": "HTML, CSS, JavaScript, Express, Node.js",
-          "link": "https://portfolio.maximecarpentier.com",
+          "link": "https://github.com/Maxime77370/Portfolio-First",
           "date": "2024-05"
         },
         "le-costumier": {
@@ -100,7 +100,7 @@
           "title": "Le Costumier",
           "description": "Site web d'un magasin de vêtements élégant et moderne.",
           "technologies": "TypeScript, React, Vite, Tailwind CSS, Stripe, Symfony, PHP",
-          "link": "https://le-costumier.maximecarpentier.com",
+          "link": "https://github.com/Maxime77370/Le-Costumier",
           "date": "2024-06"
         },
         "dino-runner-ai": {
@@ -108,7 +108,7 @@
           "title": "Dino Runner IA",
           "description": "Jeu inspiré du Dino de Google, intégrant un entraînement parallèle et le développement d'une IA de machine learning pour jouer automatiquement.",
           "technologies": "Python, PyGame",
-          "link": "https://dino-runner-ia.maximecarpentier.com",
+          "link": "https://github.com/Maxime77370/Dino-Runner-AI",
           "date": "2024-07"
         },
         "job-hunters": {
@@ -116,7 +116,7 @@
           "title": "JobHunters",
           "description": "Application web permettant de rechercher des offres d'emploi, réalisée dans le cadre d'un projet à Epitech.",
           "technologies": "HTML, CSS, JavaScript, Python",
-          "link": "https://jobhunters.maximecarpentier.com",
+          "link": "https://github.com/Maxime77370/JobHunters",
           "date": "2024-12"
         },
         "this-portfolio": {
@@ -124,7 +124,7 @@
           "title": "Mon Portfolio",
           "description": "Site web présentant mes projets et mon profil.",
           "technologies": "TypeScript, React, Next.js, Tailwind CSS, Motion",
-          "link": "https://portfolio.maximecarpentier.com",
+          "link": "https://github.com/Maxime77370/My-Portfolio",
           "date": "2025-02"
         },
         
@@ -170,6 +170,7 @@
           "title": "Stage de Découverte chez Sopra Banking Software",
           "description": "Observation du développement d’un logiciel bancaire visant à optimiser le volume des transactions.",
           "location": "France, Montreuil",
+          "technologies": "Python, HTML, CSS, JavaScript",
           "date": "2019-01"
         }
       },

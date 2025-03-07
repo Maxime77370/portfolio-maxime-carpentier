@@ -1,5 +1,3 @@
-"use client";
-
 import React, { useRef, useState } from "react";
 import Image from "next/image";
 import * as motion from "motion/react-client";
@@ -15,7 +13,7 @@ const frontEnd = [
   { name: "Next.js", logo: "/logos/nextjs.png" },
   { name: "NestJS", logo: "/logos/nestjs.png" },
   { name: "Tailwind CSS", logo: "/logos/tailwind.png" },
-];
+] as TechProps[];
 
 const backEnd = [
   { name: "Node.js", logo: "/logos/node.webp" },
@@ -27,7 +25,7 @@ const backEnd = [
   { name: "Apollo", logo: "/logos/apollo.jpeg" },
   { name: "REST API", logo: "/logos/rest-api.png" },
   { name: "Socket.io", logo: "/logos/socketio.png" },
-];
+] as TechProps[];
 
 const devOps = [
   { name: "Docker", logo: "/logos/docker.jpeg" },
@@ -35,7 +33,12 @@ const devOps = [
   { name: "SQL", logo: "/logos/sql.png" },
   { name: "MongoDB", logo: "/logos/mongo-db.png" },
   { name: "PostgreSQL", logo: "/logos/postgresql.png" },
-];
+] as TechProps[];
+
+type TechProps = {
+  name: string;
+  logo: string;
+};
 
 // Variants pour l'animation des cercles en cascade
 const circleContainerVariants = {
@@ -51,6 +54,12 @@ const circleContainerVariants = {
 const circleVariants = {
   initial: { opacity: 0, scale: 0.8 },
   animate: { opacity: 1, scale: 1 },
+};
+
+type ColumnProps = {
+  title: string;
+  data: TechProps[];
+  initialScale: number;
 };
 
 const columns = [
@@ -69,10 +78,10 @@ const columns = [
     data: devOps,
     initialScale: 0.8,
   },
-];
+] as ColumnProps[];
 
 // Composant d’une colonne animée
-function Column({ title, data, initialScale }: any) {
+function Column({ title, data, initialScale }: ColumnProps) {
 
   return (
     <motion.div
@@ -96,7 +105,8 @@ function Column({ title, data, initialScale }: any) {
         viewport={{ once: true }}
       >
         <React.Fragment>
-          {data.map((tech: any) => (
+          {data.map((tech: TechProps) => (
+            // Animation de chaque cercle (apparition, scale)
             <motion.div
               key={tech.name}
               className="flex flex-col items-center"
@@ -149,6 +159,8 @@ export default function LanguageGrid() {
             width={1200}
             height={800}
             className="max-w-none w-[180vw] md:w-[100%] opacity-50"
+            // eslint-disable-next-line
+            // @ts-ignore
             ref={containerRef}
           />
         </div>

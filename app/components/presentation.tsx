@@ -15,7 +15,7 @@ export default function Presentation() {
     return (
         <>
             <div
-                id="presentation"
+                id="about"
                 className="relative flex items-center justify-center bg-gray-900 py-8 md:py-16 lg:py-20 overflow-hidden"
             >
                 <div className="flex items-center justify-center absolute inset-0 h-full w-full scale-130">
