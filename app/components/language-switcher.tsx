@@ -1,6 +1,19 @@
 import { useRouter, usePathname } from 'next/navigation';
 import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
+import { motion, AnimatePresence } from 'framer-motion';
+
+const buttonVariants = {
+  hidden: { opacity: 0, scale: 0.95, y: -10 },
+  visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.4, ease: "easeOut", delay: 0.4 } },
+  exit: { opacity: 0, scale: 0.95, y: -10, transition: { duration: 0.5, ease: "easeInOut" } },
+};
+
+const modalVariants = {
+  hidden: { opacity: 0, scale: 0.95, y: -10 },
+  visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } },
+  exit: { opacity: 0, scale: 0.95, y: -10, transition: { duration: 0.5, ease: "easeInOut" } },
+};
 
 const languages = [
   { value: 'en', label: 'English', flag: 'https://flagcdn.com/32x24/gb.png' },
@@ -42,11 +55,15 @@ const LanguageSwitcher: React.FC = () => {
 
   return (
     <div className="relative inline-block text-left" ref={containerRef}>
-      <button
+      <motion.button
         type="button"
         className="inline-flex items-center rounded-md transition-colors bg-indigo-700 hover:bg-indigo-600 px-2 py-1 text-sm text-white focus:ring-2 focus:ring-indigo-600"
         aria-haspopup="true"
         onClick={() => setIsOpen(prev => !prev)}
+        variants={buttonVariants}
+        initial="hidden"
+        animate="visible"
+        exit="exit"
       >
         <Image
           src={currentLang.flag}
@@ -68,38 +85,44 @@ const LanguageSwitcher: React.FC = () => {
             clipRule="evenodd"
           />
         </svg>
-      </button>
+      </motion.button>
 
-      {isOpen && (
-        <ul
-          className="absolute top-full right-0 mt-1 w-40 origin-top-right rounded-md bg-white shadow-lg ring-opacity-5 focus:outline-none z-10"
-          role="listbox"
-          aria-labelledby="listbox-label"
-        >
-          {languages.map((lang, index) => (
-            <li key={index}>
-              <button
-                type="button"
-                className={`flex items-center w-full px-4 py-2 text-sm hover:bg-indigo-600 hover:text-white 
-                  ${lang.value === currentLang.value ? 'font-semibold text-indigo-600' : 'text-gray-900'}
-                  ${index === 0 ? "rounded-t-md" : ""}
-                  ${index === languages.length - 1 ? "rounded-b-md" : ""}
-                `}
-                onClick={() => changeLanguage(lang.value)}
-              >
-                <Image
-                  src={lang.flag}
-                  alt={lang.label}
-                  width={32}
-                  height={24}
-                  className="w-5 h-auto mr-2"
-                />
-                {lang.label}
-              </button>
-            </li>
-          ))}
-        </ul>
-      )}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.ul
+            className="absolute top-10 left-1/2 transform -translate-x-1/2 mt-1 w-full origin-top rounded-md bg-white shadow-lg ring-opacity-5 focus:outline-none z-10"
+            role="listbox"
+            aria-labelledby="listbox-label"
+            variants={modalVariants}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+          >
+            {languages.map((lang, index) => (
+              <li key={index}>
+                <button
+                  type="button"
+                  className={`flex items-center w-full px-4 py-2 text-sm hover:bg-indigo-600 hover:text-white 
+                ${lang.value === currentLang.value ? 'font-semibold text-indigo-600' : 'text-gray-900'}
+                ${index === 0 ? "rounded-t-md" : ""}
+                ${index === languages.length - 1 ? "rounded-b-md" : ""}
+              `}
+                  onClick={() => changeLanguage(lang.value)}
+                >
+                  <Image
+                    src={lang.flag}
+                    alt={lang.label}
+                    width={32}
+                    height={24}
+                    className="w-5 h-auto mr-2"
+                  />
+                  {lang.label}
+                </button>
+              </li>
+            ))}
+          </motion.ul>
+        )}
+      </AnimatePresence >
     </div>
   );
 };

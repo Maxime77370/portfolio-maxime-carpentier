@@ -174,7 +174,7 @@ export default function ProjectTimeline() {
             <AnimatePresence initial={false}>
                 {selectedProject && (
                     React.createElement(getTypeModal(dictionary[selectedProject].type), {
-                        itemKey: selectedProject,
+                        item: dictionary[selectedProject],
                         onClose: () => setSelectedProject(null),
                         fields: [], // Add appropriate fields here
                     })

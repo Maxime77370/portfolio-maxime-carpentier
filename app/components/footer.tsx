@@ -4,15 +4,25 @@ import { useTranslations } from "next-intl";
 
 export default function Footer() {
     const t = useTranslations();
+
+    const baseMotionProps = {
+        initial: { opacity: 0, y: 20 },
+        animate: { opacity: 1, y: 0 },
+        transition: { duration: 0.5 },
+    };
+
+    const delayedMotionProps = {
+        ...baseMotionProps,
+        transition: { ...baseMotionProps.transition, delay: 0.3 },
+    };
+
     return (
         <footer className="bg-gray-900 text-white py-6 mt-12">
             <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
                 {/* Nom et Copyright */}
                 <motion.div
                     className="text-center md:text-left"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
+                    {...baseMotionProps}
                 >
                     <p className="text-lg font-semibold">Carpentier Maxime</p>
                     <p className="text-sm text-gray-400">© 2025 - {t("footer.rights")}</p>
@@ -21,9 +31,7 @@ export default function Footer() {
                 {/* Liens de contact */}
                 <motion.div
                     className="flex space-x-6 mt-4 md:mt-0"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.3, duration: 0.5 }}
+                    {...delayedMotionProps}
                 >
                     <a href="https://github.com/Maxime77370" target="_blank" rel="noopener noreferrer">
                         <FaGithub className="text-2xl hover:text-gray-400 transition" />

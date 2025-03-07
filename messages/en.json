@@ -5,119 +5,130 @@
     "slogan": "Code, Creativity & Innovation",
     "home": "Home",
     "about": "About",
-    "projects": "Projects",
+    "timeline": "Timeline",
     "contact": "Contact"
   },
   "hero": {
     "0": {
-      "title": "Web Developer",
-      "subtitle": "I create modern and high-performance websites"
+      "title": "Front-end\nDeveloper",
+      "subtitle": "I develop beautiful interfaces\nwith the latest technologies"
     },
     "1": {
-      "title": "Front-end Developer",
-      "subtitle": "I develop user interfaces using the latest technologies"
+      "title": "Back-end\nDeveloper",
+      "subtitle": "I create APIs and logical, detailed databases"
     },
     "2": {
-      "title": "Back-end Developer",
-      "subtitle": "I build APIs and databases to store and retrieve data"
+      "title": "Full-stack\nDeveloper",
+      "subtitle": "I build complete and high-performance websites"
     }
   },
   "presentation": {
-    "title": "About me",
+    "title": "About Me",
     "loisirs": "Hobbies",
-    "shortContent": "I’m a 4th-year student at Epitech Lille, passionate about computing and new technologies since I was 14.",
-    "learnMore": "Learn more",
-    "modalTitle": "About me",
-    "fullContent": "I’m looking for an 18-month apprenticeship to apply my skills. My 2-day school, 3-day company schedule lets me quickly become operational and fully invested in the projects entrusted to me.",
+    "shortContent": "4th year student at Epitech Lille, passionate about computing and new technologies since I was 14.",
+    "learnMore": "Learn More",
+    "modalTitle": "About Me",
+    "fullContent": "I am seeking a one-and-a-half-year apprenticeship to put my skills into practice. My schedule of 2 days at school, 3 days in the company allows me to become operational quickly and fully invested in the projects entrusted to me.",
     "resumeTitle": "My Profile",
-    "close": "Close"
-  },
-  "header": {
-    "name": "Maxime Carpentier",
-    "title": "Fullstack Developer in Apprenticeship",
-    "linkedin": "LinkedIn",
-    "github": "GitHub"
-  },
-  "expertise": {
-    "title": "Expertise",
-    "item1": "Creation of REST & GraphQL APIs",
-    "item2": "Database management",
-    "item3": "Teamwork & Design Thinking"
-  },
-  "timeline": {
-    "swimming": {
-      "title": "Swimming",
-      "description": "At 6 years old – Competitive until 17"
+    "close": "Close",
+    "header": {
+      "name": "Maxime Carpentier",
+      "title": "Fullstack Developer in Apprenticeship",
+      "linkedin": "LinkedIn",
+      "github": "GitHub"
     },
-    "piano": {
-      "title": "Piano",
-      "description": "At 7 years old – Still practicing"
+    "expertise": {
+      "title": "Expertise",
+      "item1": "Creation of REST & GraphQL APIs",
+      "item2": "Database management",
+      "item3": "Teamwork & Design Thinking"
     },
-    "informatique": {
-      "title": "Computing",
-      "description": "At 14 years old – Epitech student since 2023"
-    },
-    "art": {
-      "title": "Art and Design",
-      "description": "From 2021 to 2023"
-    }
-  },
-  "projects": {
-    "trading-chart-ai": {
-      "title": "Trading Chart AI",
-      "description": "Web application that predicts stock market prices. It displays trading indicators, retrieves data via an API, stores information in a database, and processes it with a machine learning model.",
-      "technologies": "Python, TensorFlow, PyGame",
-      "link": "https://trading-chart-ia.maximecarpentier.com",
-      "date": "2020"
-    },
-    "machine-learning-experiment": {
-      "title": "Machine Learning Experiment",
-      "description": "A machine learning experiment aiming to make predictions and develop an agent capable of learning to play a game.",
-      "technologies": "Python, PyGame",
-      "link": "https://machine-learning-experiment.maximecarpentier.com",
-      "date": "2022"
-    },
-    "medieval-tower": {
-      "title": "Medieval Tower",
-      "description": "A 2D game inspired by Mario, including entity management through Java classes, a custom 2D game engine, and a medieval aesthetic, developed as part of an Epitech project.",
-      "technologies": "Java, LibGDX",
-      "link": "https://medieval-tower.maximecarpentier.com",
-      "date": "January 2024"
-    },
-    "portfolio-first": {
-      "title": "First Portfolio",
-      "description": "A website showcasing my projects.",
-      "technologies": "HTML, CSS, JavaScript, Express, Node.js",
-      "link": "https://portfolio.maximecarpentier.com",
-      "date": "May 2024"
-    },
-    "le-costumier": {
-      "title": "Le Costumier",
-      "description": "A stylish and modern clothing store website.",
-      "technologies": "TypeScript, React, Vite, Tailwind CSS, Stripe, Symfony, PHP",
-      "link": "https://le-costumier.maximecarpentier.com",
-      "date": "June 2024"
-    },
-    "dino-runner-ai": {
-      "title": "Dino Runner AI",
-      "description": "A game inspired by Google's Dino, featuring parallel training and the development of a machine learning AI to play automatically.",
-      "technologies": "Python, PyGame",
-      "link": "https://dino-runner-ia.maximecarpentier.com",
-      "date": "July 2024"
-    },
-    "job-hunters": {
-      "title": "JobHunters",
-      "description": "A web application to search for job offers, developed as part of an Epitech project.",
-      "technologies": "HTML, CSS, JavaScript, Python",
-      "link": "https://jobhunters.maximecarpentier.com",
-      "date": "December 2024"
-    },
-    "this-portfolio": {
-      "title": "My Portfolio",
-      "description": "A website showcasing my projects and my profile.",
-      "technologies": "TypeScript, React, Next.js, Tailwind CSS, Motion",
-      "link": "https://portfolio.maximecarpentier.com",
-      "date": "February 2025"
+    "timeline": {
+      "modal": {
+        "description": "Description",
+        "location": "Location",
+        "technologies": "Technologies",
+        "link": "Link"
+      },
+      "swimming": {
+        "title": "Swimming",
+        "description": "Started at 6 - Competitive until 17"
+      },
+      "piano": {
+        "title": "Piano",
+        "description": "Started at 7 - Still practicing"
+      },
+      "informatique": {
+        "title": "Computing",
+        "description": "Started at 14 - Student at Epitech since 2023"
+      },
+      "art": {
+        "title": "Art and Design",
+        "description": "From 2021 to 2023"
+      },
+      "trading-chart-ai": {
+        "title": "Trading Chart AI",
+        "description": "Web application to predict stock prices. It displays trading indicators, retrieves data via an API, stores information in a database, and processes it with a machine learning model."
+      },
+      "machine-learning-experiment": {
+        "title": "Machine Learning Experiment",
+        "description": "Machine learning experiment aimed at making predictions and developing an agent capable of learning to play a game."
+      },
+      "medieval-tower": {
+        "title": "Medieval Tower",
+        "description": "2D game inspired by Mario, featuring entity management using Java classes, a custom 2D game engine, and a medieval style, developed as part of an Epitech project."
+      },
+      "portfolio-first": {
+        "title": "First Portfolio",
+        "description": "Website showcasing my projects."
+      },
+      "le-costumier": {
+        "title": "Le Costumier",
+        "description": "Website for an elegant and modern clothing store."
+      },
+      "dino-runner-ai": {
+        "type": "project",
+        "title": "Dino Runner AI",
+        "description": "Game inspired by Google's Dino, featuring parallel training and the development of a machine learning AI to play automatically."
+      },
+      "job-hunters": {
+        "title": "JobHunters",
+        "description": "Web application that allows searching for job offers, developed as part of an Epitech project."
+      },
+      "this-portfolio": {
+        "title": "My Portfolio",
+        "description": "Website showcasing my projects and my profile."
+      },
+      "epitech-lille": {
+        "title": "Epitech Lille",
+        "description": "5-year project-based training, emphasizing autonomy, innovation, and intensive development practice.",
+        "location": "Beaux Arts, Lille"
+      },
+      "karbon": {
+        "title": "Fullstack Developer at Karbon",
+        "description": "Internship/Apprenticeship where I participated in the development of web applications, working with an agile team, database management, and continuous integration.",
+        "location": "Euratechnologies, Lille"
+      },
+      "prepa-cpge": {
+        "title": "CPGE, Technology and Industrial Sciences",
+        "description": "Two years of preparation for engineering school entrance exams, with a specialization in Engineering Sciences.",
+        "location": "Pierre de Coubertin High School, Meaux"
+      },
+      "baccalaureat": {
+        "title": "STI2D Baccalaureate",
+        "description": "Specialization in SIN (Information and Digital Systems) - With honors",
+        "location": "La Fayette High School, Champagne-sur-Seine"
+      },
+      "hillgrove-hotel": {
+        "title": "Maintenance Agent in Ireland",
+        "description": "Teamwork in an English-speaking environment. Responsible for cleaning and maintaining rooms to ensure high-quality service.",
+        "location": "Ireland, Monaghan"
+      },
+      "sopra-banking": {
+        "title": "Discovery Internship at Sopra",
+        "description": "Observation of the development of banking software aimed at optimizing transaction volume.",
+        "location": "France, Montreuil"
+      }
     }
   },
   "footer": {

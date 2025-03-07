@@ -9,17 +9,17 @@
       "contact": "Contact"
     },
     "hero": {
-      "0":{ 
-      "title": "Développeur web",
-      "subtitle": "Je crée des sites web modernes et performants"
+      "0": {
+      "title": "Développeur\nfront\u2011end",
+      "subtitle": "Je développe de belles interfaces\navec les dernières technologies"
       },
       "1": {
-      "title": "Développeur front\u2011end",
-      "subtitle": "Je développe des interfaces utilisateur avec les dernières technologies"
+      "title": "Développeur\nback\u2011end",
+      "subtitle": "Je crée des API et des bases de données\nlogiques et détaillées"
       },
       "2": {
-      "title": "Développeur back\u2011end",
-      "subtitle": "Je crée des API et des bases de données pour stocker et récupérer des données"
+      "title": "Développeur\nfull-stack",
+      "subtitle": "Je crée des sites web complets et performants"
       }
     },  
     "presentation": {
@@ -30,8 +30,7 @@
       "modalTitle": "À propos de moi",
       "fullContent": "Je recherche une alternance d’un an et demi pour mettre en pratique mes compétences. Mon rythme 2 jours à l’école, 3 en entreprise me permet d’être rapidement opérationnel et pleinement investi dans les projets qui me sont confiés.",
       "resumeTitle": "Mon Profil",
-      "close": "Fermer"
-    },
+      "close": "Fermer",
       "header": {
         "name": "Maxime Carpentier",
         "title": "Développeur Fullstack en Alternance",
@@ -45,6 +44,12 @@
         "item3": "Travail en équipe & Design Thinking"
       },
       "timeline": {
+        "modal": {
+          "description": "Description",
+          "location": "Lieu",
+          "technologies": "Technologies",
+          "link": "Lien"
+        },
         "swimming": {
           "title": "Piscine",
           "description": "À 6 ans - Compétitif jusqu'à 17 ans"
@@ -60,122 +65,76 @@
         "art": {
           "title": "Art et Design",
           "description": "De 2021 à 2023"
-        }
-    },
-      "projects": {
+        },
         "trading-chart-ai": {
-          "type": "project",
           "title": "Trading Chart IA",
-          "description": "Application web pour prédire les cours de la bourse. Elle affiche des indicateurs de trading, récupère des données via une API, stocke les informations dans une base de données et les traite avec un modèle de machine learning.",
-          "technologies": "Python, TensorFlow, PyGame",
-          "link": "https://github.com/Maxime77370/Trading-Chart-IA",
-          "date": "2020-01"
+          "description": "Application web pour prédire les cours de la bourse. Elle affiche des indicateurs de trading, récupère des données via une API, stocke les informations dans une base de données et les traite avec un modèle de machine learning."
         },
         "machine-learning-experiment": {
-          "type": "project",
           "title": "Machine Learning Experiment",
-          "description": "Expérience en machine learning visant à réaliser des prédictions et à développer un agent capable d'apprendre à jouer à un jeu.",
-          "technologies": "Python, PyGame",
-          "link": "https://github.com/Maxime77370/Machine-learing-experiment",
-          "date": "2022-02"
+          "description": "Expérience en machine learning visant à réaliser des prédictions et à développer un agent capable d'apprendre à jouer à un jeu."       
         },
         "medieval-tower": {
-          "type": "project",
           "title": "Medieval Tower",
-          "description": "Jeu 2D inspiré de Mario, intégrant la gestion des entités via des classes Java, un moteur de jeu 2D personnalisé et un style médiéval, développé dans le cadre d'un projet à Epitech.",
-          "technologies": "Java, LibGDX",
-          "link": "https://github.com/Maxime77370/Medieval-Tower",
-          "date": "2024-01"
+          "description": "Jeu 2D inspiré de Mario, intégrant la gestion des entités via des classes Java, un moteur de jeu 2D personnalisé et un style médiéval, développé dans le cadre d'un projet à Epitech."
         },
         "portfolio-first": {
-          "type": "project",
           "title": "Premier Portfolio",
-          "description": "Site web de présentation de mes projets.",
-          "technologies": "HTML, CSS, JavaScript, Express, Node.js",
-          "link": "https://github.com/Maxime77370/Portfolio-First",
-          "date": "2024-05"
+          "description": "Site web de présentation de mes projets."
         },
         "le-costumier": {
-          "type": "project",
           "title": "Le Costumier",
-          "description": "Site web d'un magasin de vêtements élégant et moderne.",
-          "technologies": "TypeScript, React, Vite, Tailwind CSS, Stripe, Symfony, PHP",
-          "link": "https://github.com/Maxime77370/Le-Costumier",
-          "date": "2024-06"
+          "description": "Site web d'un magasin de vêtements élégant et moderne."
         },
         "dino-runner-ai": {
           "type": "project",
           "title": "Dino Runner IA",
-          "description": "Jeu inspiré du Dino de Google, intégrant un entraînement parallèle et le développement d'une IA de machine learning pour jouer automatiquement.",
-          "technologies": "Python, PyGame",
-          "link": "https://github.com/Maxime77370/Dino-Runner-AI",
-          "date": "2024-07"
+          "description": "Jeu inspiré du Dino de Google, intégrant un entraînement parallèle et le développement d'une IA de machine learning pour jouer automatiquement."
         },
         "job-hunters": {
-          "type": "project",
           "title": "JobHunters",
-          "description": "Application web permettant de rechercher des offres d'emploi, réalisée dans le cadre d'un projet à Epitech.",
-          "technologies": "HTML, CSS, JavaScript, Python",
-          "link": "https://github.com/Maxime77370/JobHunters",
-          "date": "2024-12"
+          "description": "Application web permettant de rechercher des offres d'emploi, réalisée dans le cadre d'un projet à Epitech."
         },
         "this-portfolio": {
-          "type": "project",
           "title": "Mon Portfolio",
-          "description": "Site web présentant mes projets et mon profil.",
-          "technologies": "TypeScript, React, Next.js, Tailwind CSS, Motion",
-          "link": "https://github.com/Maxime77370/My-Portfolio",
-          "date": "2025-02"
+          "description": "Site web présentant mes projets et mon profil."
         },
         
         "epitech-lille": {
-          "type": "school",
           "title": "Epitech Lille",
           "description": "Formation sur 5 ans orientée autour de projets, mettant l’accent sur l’autonomie, l’innovation et la pratique intensive du développement.",
-          "location": "Beaux Arts, Lille",
-          "date": "2020-09"
+          "location": "Beaux Arts, Lille"
         },
     
         "karbon": {
-          "type": "job",
           "title": "Développeur Fullstack chez Karbon",
           "description": "Stage / Alternance où j’ai participé au développement d’applications web, avec une équipe agile, gestion de bases de données et intégration continue.",
-          "technologies": "TypeScript, React, Node.js, Docker",
-          "location": "Euratechnologies, Lille",
-          "date": "2024-06"
+          "location": "Euratechnologies, Lille"
         },
         "prepa-cpge": {
-          "type": "school",
           "title": "CPGE, Technologie et Sciences Industrielles",
           "description": "Deux ans de préparation aux concours des écoles d’ingénieurs, avec une spécialisation en Sciences de l’Ingénieur.",
-          "location": "Lycée Pierre de Coubertin, Meaux",
-          "date": "2021-09"
+          "location": "Lycée Pierre de Coubertin, Meaux"
         },
         "baccalaureat": {
-          "type": "diploma",
           "title": "Baccalauréat STI2D",
           "description": "Spécialité SIN (Systèmes d’Information et Numérique) - Mention Bien",
-          "location": "Lycée La Fayette, Champagne-sur-Seine",
-          "date": "2021-07"
+          "location": "Lycée La Fayette, Champagne-sur-Seine"
         },
         "hillgrove-hotel": {
-          "type": "job",
           "title": "Agent d’entretien en Irlande",
           "description": "Travail en équipe dans un environnement anglophone. Gestion du nettoyage et de l’entretien des chambres pour garantir une prestation de qualité.",
-          "location": "Irlande, Monaghan",
-          "date": "2022-07"
+          "location": "Irlande, Monaghan"
         },
         "sopra-banking": {
-          "type": "job",
-          "title": "Stage de Découverte chez Sopra Banking Software",
+          "title": "Stage de Découverte chez Sopra",
           "description": "Observation du développement d’un logiciel bancaire visant à optimiser le volume des transactions.",
-          "location": "France, Montreuil",
-          "technologies": "Python, HTML, CSS, JavaScript",
-          "date": "2019-01"
+          "location": "France, Montreuil"
         }
-      },
-      "footer": {
-        "rights": "Tous droits réservés"
       }
-  }
+    },
+    "footer": {
+      "rights": "Tous droits réservés"
+    }
+}
   

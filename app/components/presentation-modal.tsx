@@ -69,7 +69,7 @@ interface PortfolioModalProps {
 }
 
 const PortfolioModal: React.FC<PortfolioModalProps> = ({ onClose }) => {
-    const t = useTranslations();
+    const t = useTranslations("presentation");
 
     return (
         <motion.div
@@ -103,7 +103,7 @@ const PortfolioModal: React.FC<PortfolioModalProps> = ({ onClose }) => {
                 {/* Bouton de fermeture */}
                 <button
                     onClick={onClose}
-                    aria-label={t("presentation.close")}
+                    aria-label={t("close")}
                     className="
             absolute top-3 right-3
             flex items-center justify-center w-9 h-9
@@ -132,7 +132,7 @@ const PortfolioModal: React.FC<PortfolioModalProps> = ({ onClose }) => {
                         <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-8 mt-6 sm:mt-0">
                             <div className="relative w-24 h-24 sm:w-32 sm:h-32 rounded-full overflow-hidden shadow-lg">
                                 <Image
-                                    src="/profile.jpg"
+                                    src="/images/profile.jpg"
                                     alt="Photo de profil"
                                     layout="fill"
                                     objectFit="cover"
@@ -186,7 +186,7 @@ const PortfolioModal: React.FC<PortfolioModalProps> = ({ onClose }) => {
                         </div>
                         {/* Description courte */}
                         <p className="mt-4 text-gray-700 leading-normal max-w-2xl px-2">
-                            {t("presentation.shortContent")}
+                            {t("shortContent")}
                         </p>
                     </header>
 
@@ -213,10 +213,10 @@ const PortfolioModal: React.FC<PortfolioModalProps> = ({ onClose }) => {
                         >
                             <div className="flex items-center gap-2 text-lg sm:text-xl md:text-2xl font-semibold text-gray-900 mb-1">
                                 <FaUserCircle className="text-indigo-600" size={24} />
-                                <h2>{t("presentation.resumeTitle")}</h2>
+                                <h2>{t("resumeTitle")}</h2>
                             </div>
                             <p className="text-gray-800 leading-normal text-sm sm:text-base md:text-lg">
-                                {t("presentation.fullContent")}
+                                {t("fullContent")}
                             </p>
                         </motion.section>
 
@@ -272,7 +272,7 @@ const PortfolioModal: React.FC<PortfolioModalProps> = ({ onClose }) => {
                     {/* Timeline des Loisirs */}
                     <section className="flex flex-col gap-2">
                         <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-900">
-                            {t("presentation.loisirs")}
+                            {t("loisirs")}
                         </h2>
 
                         <div

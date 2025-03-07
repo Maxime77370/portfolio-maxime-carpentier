@@ -56,8 +56,8 @@ function TypewriterText({
     const container = {
         animate: {
             transition: {
-                staggerChildren: 0.04, // intervalle entre chaque caractère
-                delayChildren: delay   // délai avant de commencer à afficher les lettres
+                staggerChildren: 0.04,
+                delayChildren: delay
             }
         },
         exit: { opacity: 0 }
@@ -85,29 +85,189 @@ function TypewriterText({
     );
 }
 
+// Composant pour l'image en rotation
+function ShapeImage({
+    shapeIndex,
+    direction,
+    shapeControls
+}: {
+    shapeIndex: number;
+    direction: "prev" | "next";
+    shapeControls: ReturnType<typeof useAnimation>;
+}) {
+    return (
+        <motion.div
+            className="absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+            style={{ top: "calc(50% + 1rem)" }}
+            animate={shapeControls}
+        >
+            <AnimatePresence custom={direction} mode="wait">
+                <motion.div
+                    key={shapeIndex}
+                    variants={cardImageVariants}
+                    initial="initial"
+                    animate="animate"
+                    exit="exit"
+                    transition={{ duration: 0.5 }}
+                >
+                    <div className="w-[250px] sm:w-[350px] md:w-[550px]">
+                        <Image
+                            src={shapes[shapeIndex]}
+                            alt="Shape"
+                            width={550}
+                            height={550}
+                            layout="responsive"
+                            className="opacity-60"
+                        />
+                    </div>
+                </motion.div>
+            </AnimatePresence>
+        </motion.div>
+    );
+}
+
+// Composant pour le titre animé
+function AnimatedTitle({
+    shapeIndex,
+    direction,
+    t
+}: {
+    shapeIndex: number;
+    direction: "prev" | "next";
+    t: (key: string) => string;
+}) {
+    return (
+        <AnimatePresence custom={direction} mode="wait">
+            <motion.div
+                key={`title-${shapeIndex}`}
+                custom={direction}
+                variants={cardTextVariants}
+                initial="initial"
+                animate="animate"
+                exit="exit"
+                transition={{ duration: 0.5, delay: 0.1 }}
+            >
+                <TypewriterText
+                    text={t(`hero.${shapeIndex}.title`)}
+                    className="whitespace-pre-wrap break-normal hyphens-none text-2xl sm:text-5xl md:text-6xl font-bold uppercase tracking-wide leading-tight h-15 md:h-34"
+                />
+            </motion.div>
+        </AnimatePresence>
+    );
+}
+
+// Composant pour le sous-titre animé
+function AnimatedSubtitle({
+    shapeIndex,
+    direction,
+    t
+}: {
+    shapeIndex: number;
+    direction: "prev" | "next";
+    t: (key: string) => string;
+}) {
+    return (
+        <AnimatePresence custom={direction} mode="wait">
+            <motion.div
+                key={`subtitle-${shapeIndex}`}
+                custom={direction}
+                variants={cardTextVariants}
+                initial="initial"
+                animate="animate"
+                exit="exit"
+                transition={{ delay: 0.2, duration: 0.5 }}
+            >
+                <TypewriterText
+                    text={t(`hero.${shapeIndex}.subtitle`)}
+                    className="whitespace-normal hyphens-none mt-4 text-sm sm:text-lg md:text-xl tracking-wide leading-relaxed"
+                    delay={0.2}
+                />
+            </motion.div>
+        </AnimatePresence>
+    );
+}
+
+// Composant pour les flèches de navigation
+function NavigationArrows({
+    changeShape
+}: {
+    changeShape: (direction: "prev" | "next") => void;
+}) {
+    return (
+        <div className="absolute inset-y-0 pt-16 left-0 right-0 flex items-center justify-between px-5 z-20">
+            <div className="cursor-pointer" onClick={() => changeShape("prev")}>
+                <svg
+                    className="h-8 w-8 sm:h-10 sm:w-10 text-white hover:text-gray-300 transition"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" />
+                </svg>
+            </div>
+            <div className="cursor-pointer" onClick={() => changeShape("next")}>
+                <svg
+                    className="h-8 w-8 sm:h-10 sm:w-10 text-white hover:text-gray-300 transition"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+                </svg>
+            </div>
+        </div>
+    );
+}
+
+// Composant pour le bouton de scroll
+function ScrollButton({
+    handleScroll
+}: {
+    handleScroll: () => void;
+}) {
+    return (
+        <motion.div
+            className="absolute bottom-5 z-20 cursor-pointer flex flex-col items-center"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1, duration: 1 }}
+            onClick={handleScroll}
+        >
+            <span className="text-white text-base sm:text-lg md:text-xl animate-bounce">
+                Start
+            </span>
+            <motion.div
+                className="h-1 bg-white mt-2"
+                initial={{ width: 0 }}
+                animate={{ width: "6rem" }}
+                transition={{ delay: 1.5, duration: 1 }}
+            />
+        </motion.div>
+    );
+}
+
 export default function Hero() {
     const t = useTranslations();
     const shapeControls = useAnimation();
     const [shapeIndex, setShapeIndex] = useState(0);
     const [direction, setDirection] = useState<"prev" | "next">("next");
 
-    // Animation d'entrée et rotation continue de la forme
-    const sequence = async () => {
-        // Rotation initiale
-        await shapeControls.start({
-            rotate: 90,
-            transition: { duration: 1, ease: "easeInOut" }
-        });
-        // Rotation continue
-        shapeControls.start({
-            rotate: [90, 450],
-            transition: { duration: 20, ease: "linear", repeat: Infinity }
-        });
-    };
-
     useEffect(() => {
+        // Animation d'entrée et rotation continue de la forme
+        const sequence = async () => {
+            await shapeControls.start({
+                rotate: 90,
+                transition: { duration: 1, ease: "easeInOut" }
+            });
+            shapeControls.start({
+                rotate: [90, 450],
+                transition: { duration: 20, ease: "linear", repeat: Infinity }
+            });
+        };
+
         sequence();
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [shapeControls]);
 
     const handleScroll = () => {
@@ -128,134 +288,18 @@ export default function Hero() {
 
     return (
         <div className="relative min-h-[50vh] md:min-h-screen flex flex-col items-center justify-center overflow-hidden pt-16">
-            {/* Fond animé */}
             <AnimatedBackground
                 fromColor="#1e3a8a"
                 toColor="#4c1d95"
                 ballColor="rgba(236, 72, 153,0.5)"
-            />
-
-            {/* Conteneur pour l'image avec rotation continue */}
-            <motion.div
-                className="absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-                style={{ top: "calc(50% + 1rem)" }}
-                animate={shapeControls}
-            >
-                <AnimatePresence custom={direction} mode="wait">
-                    <motion.div
-                        key={shapeIndex}
-                        variants={cardImageVariants}
-                        initial="initial"
-                        animate="animate"
-                        exit="exit"
-                        transition={{ duration: 0.5 }}
-                    >
-                        {/* Image responsive (max-width contrôlé) */}
-                        <div className="w-[250px] sm:w-[350px] md:w-[550px]">
-                            <Image
-                                src={shapes[shapeIndex]}
-                                alt="Shape"
-                                width={550}
-                                height={550}
-                                layout="responsive"
-                                className="opacity-60"
-                            />
-                        </div>
-                    </motion.div>
-                </AnimatePresence>
-            </motion.div>
-
-            {/* Conteneur statique pour le texte, avec un max-width pour éviter les débordements */}
+            />xl
+            <ShapeImage shapeIndex={shapeIndex} direction={direction} shapeControls={shapeControls} />
             <div className="relative z-20 max-w-screen-md px-4 text-center text-white w-[80%]">
-                {/* Titre animé */}
-                <AnimatePresence custom={direction} mode="wait">
-                    <motion.div
-                        key={`title-${shapeIndex}`}
-                        custom={direction}
-                        variants={cardTextVariants}
-                        initial="initial"
-                        animate="animate"
-                        exit="exit"
-                        transition={{ duration: 0.5 }}
-                    >
-                        <TypewriterText
-                            text={t(`hero.${shapeIndex}.title`)}
-                            className="whitespace-pre-wrap break-normal hyphens-none text-2xl sm:text-5xl md:text-6xl font-bold uppercase tracking-wide leading-tight"
-                        />
-                    </motion.div>
-                </AnimatePresence>
-
-                {/* Sous-titre animé */}
-                <AnimatePresence custom={direction} mode="wait">
-                    <motion.div
-                        key={`subtitle-${shapeIndex}`}
-                        custom={direction}
-                        variants={cardTextVariants}
-                        initial="initial"
-                        animate="animate"
-                        exit="exit"
-                        transition={{ delay: 0.1, duration: 0.5 }}
-                    >
-                        <TypewriterText
-                            text={t(`hero.${shapeIndex}.subtitle`)}
-                            className="whitespace-normal break-words hyphens-none mt-4 text-sm sm:text-lg md:text-xl tracking-wide leading-relaxed"
-                            delay={0.2}
-                        />
-                    </motion.div>
-                </AnimatePresence>
+                <AnimatedTitle shapeIndex={shapeIndex} direction={direction} t={t} />
+                <AnimatedSubtitle shapeIndex={shapeIndex} direction={direction} t={t} />
             </div>
-
-
-            {/* Flèches de navigation */}
-            <div className="absolute inset-y-0 pt-16 left-0 right-0 flex items-center justify-between px-5 z-20">
-                <div
-                    className="cursor-pointer"
-                    onClick={() => changeShape("prev")}
-                >
-                    <svg
-                        className="h-8 w-8 sm:h-10 sm:w-10 text-white hover:text-gray-300 transition"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                    >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" />
-                    </svg>
-                </div>
-                <div
-                    className="cursor-pointer"
-                    onClick={() => changeShape("next")}
-                >
-                    <svg
-                        className="h-8 w-8 sm:h-10 sm:w-10 text-white hover:text-gray-300 transition"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                    >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
-                    </svg>
-                </div>
-            </div>
-
-            {/* Bouton Scroll */}
-            <motion.div
-                className="absolute bottom-5 z-20 cursor-pointer flex flex-col items-center"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 1, duration: 1 }}
-                onClick={handleScroll}
-            >
-                <span className="text-white text-base sm:text-lg md:text-xl animate-bounce">
-                    Start
-                </span>
-                <motion.div
-                    className="h-1 bg-white mt-2"
-                    initial={{ width: 0 }}
-                    animate={{ width: "6rem" }}
-                    transition={{ delay: 1.5, duration: 1 }}
-                />
-            </motion.div>
+            <NavigationArrows changeShape={changeShape} />
+            <ScrollButton handleScroll={handleScroll} />
         </div>
     );
 }

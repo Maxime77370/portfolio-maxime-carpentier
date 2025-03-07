@@ -161,7 +161,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
             >
                 {getTypeIcon(type)}
             </div>
-            <div className="join-item px-3 py-2 flex-1 flex items-center justify-between gap-2">
+            <div className="join-item px-3 py-2 flex-1 flex items-center justify-between gap-2 max-h-16">
                 <h3 className="font-extrabold text-gray-900">{title}</h3>
                 <span className="text-sm text-gray-500 text-right">{formatDate(date)}</span>
             </div>

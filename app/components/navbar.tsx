@@ -13,7 +13,6 @@ const navItems = [
 
 export default function NavBar() {
     const t = useTranslations();
-    // État pour le menu mobile
     const [menuOpen, setMenuOpen] = useState(false);
 
     const toggleMenu = () => {
@@ -29,7 +28,7 @@ export default function NavBar() {
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between h-16 items-center">
-                    {/* Partie gauche avec shape-3 et titre/slogan */}
+                    {/* Partie gauche : logo et titre/slogan */}
                     <div className="flex items-center">
                         <motion.div
                             initial={{ opacity: 0, x: -20 }}
@@ -64,7 +63,7 @@ export default function NavBar() {
                         </motion.div>
                     </div>
 
-                    {/* Bouton hamburger visible seulement en mobile (md-) */}
+                    {/* Bouton hamburger en mobile */}
                     <div className="flex md:hidden">
                         <button
                             onClick={toggleMenu}
@@ -106,11 +105,11 @@ export default function NavBar() {
                         </button>
                     </div>
 
-                    {/* Liens de navigation + LanguageSwitcher (cachés en mobile, visibles en md+) */}
+                    {/* Navigation & LanguageSwitcher en desktop */}
                     <div className="hidden md:flex items-center space-x-6">
                         {navItems.map((item, index) => (
                             <motion.a
-                                key={index}
+                                key={item.key}
                                 href={item.href}
                                 className="text-gray-300 hover:text-white transition-colors text-md"
                                 initial={{ opacity: 0, x: 20 }}
@@ -130,44 +129,39 @@ export default function NavBar() {
                 </div>
             </div>
 
-            {/* Menu mobile (slide-down) : visible seulement quand menuOpen est true, caché en md+ */}
-
+            {/* Menu mobile (affiché en slide-down) */}
             <AnimatePresence>
                 {menuOpen && (
                     <motion.div
-                        className="md:hidden bg-black/5"
+                        className="md:hidden absolute top-16 right-0 w-1/3 bg-black/50 backdrop-blur-md rounded-lg m-2"
                         initial={{ height: 0, opacity: 0 }}
                         animate={{ height: "auto", opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.3 }}
                     >
-                        <div className="flex w-full py-4 justify-between px-4">
-                            {/* LanguageSwitcher en mobile */}
-                            <div className="flex flex-col space-y-2">
-                                {navItems.map((item, index) => (
-                                    <motion.a
-                                        key={index}
-                                        href={item.href}
-                                        className="block text-gray-300 hover:text-white transition-colors text-md"
-                                        initial={{ opacity: 0, x: 20 }}
-                                        animate={{ opacity: 1, x: 0 }}
-                                        transition={{ delay: 0.1 + index * 0.05, duration: 0.4 }}
-                                        whileHover={{
-                                            scale: 1.05,
-                                            transition: { type: "spring", stiffness: 300 },
-                                        }}
-                                        onClick={() => setMenuOpen(false)} // Fermer le menu au clic
-                                    >
-                                        {t(`nav.${item.key}`)}
-                                    </motion.a>
-                                ))}
-                            </div>
+                        <div className="w-full py-4 px-4 flex flex-col space-y-2 gap-2">
+                            {navItems.map((item, index) => (
+                                <motion.a
+                                    key={item.key}
+                                    href={item.href}
+                                    className="block w-full text-gray-300 hover:text-white transition-colors text-md text-right font-semibold"
+                                    initial={{ opacity: 0, x: 20 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    transition={{ delay: 0.1 + index * 0.05, duration: 0.4 }}
+                                    whileHover={{
+                                        scale: 1.05,
+                                        transition: { type: "spring", stiffness: 300 },
+                                    }}
+                                    onClick={() => setMenuOpen(false)}
+                                >
+                                    {t(`nav.${item.key}`)}
+                                </motion.a>
+                            ))}
                             <LanguageSwitcher />
                         </div>
-                    </motion.div >
-                )
-                }
+                    </motion.div>
+                )}
             </AnimatePresence>
-        </motion.nav >
+        </motion.nav>
     );
 }
