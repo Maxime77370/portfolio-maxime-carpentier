@@ -5,7 +5,7 @@ import { FaGithub, FaNetworkWired } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import { DictionaryItem } from './timeline-dict';
 import Image from 'next/image';
-import { FaInfo, FaSchool, FaBriefcase } from 'react-icons/fa';
+import { FaInfo } from 'react-icons/fa';
 
 const overlayVariants = {
   hidden: { opacity: 0 },
@@ -45,7 +45,7 @@ function getDivField(item: DictionaryItem, field: keyof DictionaryItem) {
     case 'description':
       return (
         <div className="flex items-center gap-4 bg-white shadow-md rounded-lg p-4 mt-2">
-          <FaInfo className="w-6 h-6 ml-1" />
+          <FaInfo className="w-5 h-5 ml-1 hidden md:block" />
           <p className="text-gray-800">{item[field]}</p>
         </div>
       );
@@ -122,7 +122,7 @@ function getDivField(item: DictionaryItem, field: keyof DictionaryItem) {
       );
     case 'title':
       return (
-        <header className="flex items-center justify-between gap-4 bg-white shadow-md rounded-lg p-4 mt-2">
+        <header className="flex items-center justify-between gap-4 bg-white shadow-md rounded-lg py-4 px-2 mt-2">
           <div className="flex items-center gap-4">
             <h3 className="text-2xl text-gray-900 font-bold">{item.title}</h3>
           </div>

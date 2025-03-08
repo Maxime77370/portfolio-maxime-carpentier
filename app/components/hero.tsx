@@ -118,6 +118,7 @@ function ShapeImage({
               height={550}
               layout="responsive"
               className="opacity-60"
+              priority
             />
           </div>
         </motion.div>
