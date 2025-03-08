@@ -88,22 +88,20 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
 
   // Variants pour l'animation
   const cardVariants: Variants = {
-    hidden: ({ enterIndex }: { enterIndex: number }) => ({
+    hidden: () => ({
       opacity: 0,
       y: 30,
       transition: {
         duration: 0.2,
         ease: 'easeInOut',
-        delay: enterIndex * STAGGER,
       },
     }),
-    visible: ({ enterIndex }: { enterIndex: number }) => ({
+    visible: () => ({
       opacity: 1,
       y: 0,
       transition: {
         duration: 0.2,
         ease: 'easeInOut',
-        delay: enterIndex * STAGGER,
       },
     }),
     exit: ({ exitIndex }: { exitIndex: number }) => ({
@@ -118,13 +116,13 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
   };
 
   const bulletVariants: Variants = {
-    hidden: ({ enterIndex }: { enterIndex: number }) => ({
+    hidden: () => ({
       scale: 0,
-      transition: { duration: 0.3, delay: enterIndex * STAGGER },
+      transition: { duration: 0.3 },
     }),
-    visible: ({ enterIndex }: { enterIndex: number }) => ({
+    visible: () => ({
       scale: 1,
-      transition: { duration: 0.3, delay: enterIndex * STAGGER },
+      transition: { duration: 0.3 },
     }),
     exit: ({ exitIndex }: { exitIndex: number }) => ({
       scale: 0,
@@ -133,13 +131,13 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
   };
 
   const lineVariants: Variants = {
-    hidden: ({ enterIndex }: { enterIndex: number }) => ({
+    hidden: () => ({
       width: 0,
-      transition: { duration: 0.3, delay: enterIndex * STAGGER },
+      transition: { duration: 0.3 },
     }),
-    visible: ({ enterIndex }: { enterIndex: number }) => ({
+    visible: () => ({
       width: '2.5rem',
-      transition: { duration: 0.3, delay: enterIndex * STAGGER },
+      transition: { duration: 0.3 },
     }),
     exit: ({ exitIndex }: { exitIndex: number }) => ({
       width: 0,
@@ -234,7 +232,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
               exit="exit"
               whileInView="visible"
               viewport={{ once: true }}
-              custom={{ enterIndex: index, exitIndex: reverseIndex }}
+              custom={{ exitIndex: reverseIndex }}
             >
               {/* Header pour mobile et desktop */}
               <MobileHeader />
@@ -251,7 +249,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
               exit="exit"
               whileInView="visible"
               viewport={{ once: true }}
-              custom={{ enterIndex: index, exitIndex: reverseIndex }}
+              custom={{ exitIndex: reverseIndex }}
             />
           </div>
 
@@ -268,7 +266,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
             exit="exit"
             whileInView="visible"
             viewport={{ once: true }}
-            custom={{ enterIndex: index, exitIndex: reverseIndex }}
+            custom={{ exitIndex: reverseIndex }}
           >
             {getTypeIcon(type)}
           </motion.div>
@@ -277,7 +275,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
           <div className="w-full pr-2 md:pl-10 md:mt-0 mb-4 md:mb-0 md:w-1/2 flex justify-start md:justify-start order-1 md:order-3">
             <motion.div
               className="w-full md:w-auto text-right"
-              custom={{ enterIndex: index, exitIndex: reverseIndex }}
+              custom={{ exitIndex: reverseIndex }}
               variants={cardVariants}
               initial="hidden"
               exit="exit"
@@ -318,7 +316,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
             exit="exit"
             whileInView="visible"
             viewport={{ once: true }}
-            custom={{ enterIndex: index, exitIndex: reverseIndex }}
+            custom={{ exitIndex: reverseIndex }}
           >
             {getTypeIcon(type)}
           </motion.div>
@@ -336,7 +334,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
               exit="exit"
               whileInView="visible"
               viewport={{ once: true }}
-              custom={{ enterIndex: index, exitIndex: reverseIndex }}
+              custom={{ exitIndex: reverseIndex }}
             />
 
             <motion.div
@@ -350,7 +348,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
               exit="exit"
               whileInView="visible"
               viewport={{ once: true }}
-              custom={{ enterIndex: index, exitIndex: reverseIndex }}
+              custom={{ exitIndex: reverseIndex }}
             >
               {/* Header pour mobile et desktop */}
               <MobileHeader />

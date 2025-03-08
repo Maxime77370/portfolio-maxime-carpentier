@@ -146,6 +146,7 @@ export default function ProjectTimeline() {
               animate={{ height: contentHeight || 0 }}
               exit={{ height: 0 }}
               transition={{ duration: 0.6, ease: 'easeInOut' }}
+              className="overflow-hidden"
             >
               <MiddleList
                 show={showMore}

@@ -83,6 +83,7 @@ const PortfolioModal: React.FC<PortfolioModalProps> = ({ onClose }) => {
       animate="visible"
       exit="exit"
       onClick={onClose}
+      rel="noopener noreferrer"
     >
       {/* Conteneur principal du modal */}
       <motion.div
