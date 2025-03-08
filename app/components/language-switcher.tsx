@@ -5,14 +5,34 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const buttonVariants = {
   hidden: { opacity: 0, scale: 0.95, y: -10 },
-  visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.4, ease: "easeOut", delay: 0.4 } },
-  exit: { opacity: 0, scale: 0.95, y: -10, transition: { duration: 0.5, ease: "easeInOut" } },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    y: 0,
+    transition: { duration: 0.4, ease: 'easeOut', delay: 0.4 },
+  },
+  exit: {
+    opacity: 0,
+    scale: 0.95,
+    y: -10,
+    transition: { duration: 0.5, ease: 'easeInOut' },
+  },
 };
 
 const modalVariants = {
   hidden: { opacity: 0, scale: 0.95, y: -10 },
-  visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } },
-  exit: { opacity: 0, scale: 0.95, y: -10, transition: { duration: 0.5, ease: "easeInOut" } },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    y: 0,
+    transition: { duration: 0.4, ease: 'easeOut' },
+  },
+  exit: {
+    opacity: 0,
+    scale: 0.95,
+    y: -10,
+    transition: { duration: 0.5, ease: 'easeInOut' },
+  },
 };
 
 const languages = [
@@ -28,8 +48,10 @@ const LanguageSwitcher: React.FC = () => {
 
   // Déterminer la langue actuelle à partir du chemin
   const segments = pathname.split('/');
-  const currentLangValue = (segments[1] === 'en' || segments[1] === 'fr') ? segments[1] : 'en';
-  const currentLang = languages.find(lang => lang.value === currentLangValue) || languages[0];
+  const currentLangValue =
+    segments[1] === 'en' || segments[1] === 'fr' ? segments[1] : 'en';
+  const currentLang =
+    languages.find((lang) => lang.value === currentLangValue) || languages[0];
 
   const changeLanguage = (lng: string) => {
     const segments = pathname.split('/');
@@ -45,7 +67,10 @@ const LanguageSwitcher: React.FC = () => {
   // Fermer le menu déroulant si l'utilisateur clique en dehors
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
+      if (
+        containerRef.current &&
+        !containerRef.current.contains(event.target as Node)
+      ) {
         setIsOpen(false);
       }
     };
@@ -59,7 +84,7 @@ const LanguageSwitcher: React.FC = () => {
         type="button"
         className="inline-flex items-center rounded-md transition-colors bg-indigo-700 hover:bg-indigo-600 px-2 py-1 text-sm text-white focus:ring-2 focus:ring-indigo-600"
         aria-haspopup="true"
-        onClick={() => setIsOpen(prev => !prev)}
+        onClick={() => setIsOpen((prev) => !prev)}
         variants={buttonVariants}
         initial="hidden"
         animate="visible"
@@ -104,8 +129,8 @@ const LanguageSwitcher: React.FC = () => {
                   type="button"
                   className={`flex items-center w-full px-4 py-2 text-sm hover:bg-indigo-600 hover:text-white 
                 ${lang.value === currentLang.value ? 'font-semibold text-indigo-600' : 'text-gray-900'}
-                ${index === 0 ? "rounded-t-md" : ""}
-                ${index === languages.length - 1 ? "rounded-b-md" : ""}
+                ${index === 0 ? 'rounded-t-md' : ''}
+                ${index === languages.length - 1 ? 'rounded-b-md' : ''}
               `}
                   onClick={() => changeLanguage(lang.value)}
                 >
@@ -122,7 +147,7 @@ const LanguageSwitcher: React.FC = () => {
             ))}
           </motion.ul>
         )}
-      </AnimatePresence >
+      </AnimatePresence>
     </div>
   );
 };

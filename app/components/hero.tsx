@@ -1,21 +1,21 @@
-import { motion, AnimatePresence, useAnimation } from "framer-motion";
-import AnimatedBackground from "./animated-background";
-import { useTranslations } from "next-intl";
-import { useEffect, useState } from "react";
-import Image from "next/image";
+import { motion, AnimatePresence, useAnimation } from 'framer-motion';
+import AnimatedBackground from './animated-background';
+import { useTranslations } from 'next-intl';
+import { useEffect, useState } from 'react';
+import Image from 'next/image';
 
 // Images ou formes à afficher
 const shapes = [
-  "/shape/shape-1.webp",
-  "/shape/shape-2.webp",
-  "/shape/shape-3.webp",
+  '/shape/shape-1.webp',
+  '/shape/shape-2.webp',
+  '/shape/shape-3.webp',
 ];
 
 // Variants pour la transition directionnelle du texte
 const cardTextVariants = {
   initial: (direction: string) => ({
     opacity: 0,
-    x: direction === "next" ? 100 : -100,
+    x: direction === 'next' ? 100 : -100,
   }),
   animate: {
     opacity: 1,
@@ -23,7 +23,7 @@ const cardTextVariants = {
   },
   exit: (direction: string) => ({
     opacity: 0,
-    x: direction === "next" ? -100 : 100,
+    x: direction === 'next' ? -100 : 100,
   }),
 };
 
@@ -76,9 +76,9 @@ function TypewriterText({
       animate="animate"
       exit="exit"
     >
-      {text.split("").map((char, index) => (
+      {text.split('').map((char, index) => (
         <motion.span key={index} variants={child}>
-          {char === " " ? "\u00A0" : char}
+          {char === ' ' ? '\u00A0' : char}
         </motion.span>
       ))}
     </motion.div>
@@ -92,13 +92,13 @@ function ShapeImage({
   shapeControls,
 }: {
   shapeIndex: number;
-  direction: "prev" | "next";
+  direction: 'prev' | 'next';
   shapeControls: ReturnType<typeof useAnimation>;
 }) {
   return (
     <motion.div
       className="absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-      style={{ top: "calc(50% + 1rem)" }}
+      style={{ top: 'calc(50% + 1rem)' }}
       animate={shapeControls}
     >
       <AnimatePresence custom={direction} mode="wait">
@@ -133,7 +133,7 @@ function AnimatedTitle({
   t,
 }: {
   shapeIndex: number;
-  direction: "prev" | "next";
+  direction: 'prev' | 'next';
   t: (key: string) => string;
 }) {
   return (
@@ -163,7 +163,7 @@ function AnimatedSubtitle({
   t,
 }: {
   shapeIndex: number;
-  direction: "prev" | "next";
+  direction: 'prev' | 'next';
   t: (key: string) => string;
 }) {
   return (
@@ -191,11 +191,11 @@ function AnimatedSubtitle({
 function NavigationArrows({
   changeShape,
 }: {
-  changeShape: (direction: "prev" | "next") => void;
+  changeShape: (direction: 'prev' | 'next') => void;
 }) {
   return (
     <div className="absolute inset-y-0 pt-16 left-0 right-0 flex items-center justify-between px-5 z-20">
-      <div className="cursor-pointer" onClick={() => changeShape("prev")}>
+      <div className="cursor-pointer" onClick={() => changeShape('prev')}>
         <svg
           className="h-8 w-8 sm:h-10 sm:w-10 text-white hover:text-gray-300 transition"
           xmlns="http://www.w3.org/2000/svg"
@@ -211,7 +211,7 @@ function NavigationArrows({
           />
         </svg>
       </div>
-      <div className="cursor-pointer" onClick={() => changeShape("next")}>
+      <div className="cursor-pointer" onClick={() => changeShape('next')}>
         <svg
           className="h-8 w-8 sm:h-10 sm:w-10 text-white hover:text-gray-300 transition"
           xmlns="http://www.w3.org/2000/svg"
@@ -247,7 +247,7 @@ function ScrollButton({ handleScroll }: { handleScroll: () => void }) {
       <motion.div
         className="h-1 bg-white mt-2"
         initial={{ width: 0 }}
-        animate={{ width: "6rem" }}
+        animate={{ width: '6rem' }}
         transition={{ delay: 1.5, duration: 1 }}
       />
     </motion.div>
@@ -258,18 +258,18 @@ export default function Hero() {
   const t = useTranslations();
   const shapeControls = useAnimation();
   const [shapeIndex, setShapeIndex] = useState(0);
-  const [direction, setDirection] = useState<"prev" | "next">("next");
+  const [direction, setDirection] = useState<'prev' | 'next'>('next');
 
   useEffect(() => {
     // Animation d'entrée et rotation continue de la forme
     const sequence = async () => {
       await shapeControls.start({
         rotate: 90,
-        transition: { duration: 1, ease: "easeInOut" },
+        transition: { duration: 1, ease: 'easeInOut' },
       });
       shapeControls.start({
         rotate: [90, 450],
-        transition: { duration: 20, ease: "linear", repeat: Infinity },
+        transition: { duration: 20, ease: 'linear', repeat: Infinity },
       });
     };
 
@@ -277,16 +277,16 @@ export default function Hero() {
   }, [shapeControls]);
 
   const handleScroll = () => {
-    const presentationSection = document.getElementById("about");
+    const presentationSection = document.getElementById('about');
     if (presentationSection) {
-      presentationSection.scrollIntoView({ behavior: "smooth" });
+      presentationSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
-  const changeShape = (newDirection: "prev" | "next") => {
+  const changeShape = (newDirection: 'prev' | 'next') => {
     setDirection(newDirection);
     setShapeIndex((prev) =>
-      newDirection === "next"
+      newDirection === 'next'
         ? (prev + 1) % shapes.length
         : (prev - 1 + shapes.length) % shapes.length
     );

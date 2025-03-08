@@ -1,40 +1,40 @@
-"use client";
+'use client';
 
-import React, { useRef, useState } from "react";
-import Image from "next/image";
-import { motion } from "framer-motion";
+import React, { useRef, useState } from 'react';
+import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 // --- Exemple de listes de technologies par catégorie
 const frontEnd = [
-  { name: "HTML", logo: "/logos/html.webp" },
-  { name: "CSS", logo: "/logos/css.webp" },
-  { name: "JavaScript", logo: "/logos/js.webp" },
-  { name: "TypeScript", logo: "/logos/typescript.png" },
-  { name: "React", logo: "/logos/react.jpeg" },
-  { name: "Bootstrap", logo: "/logos/bootstrap.png" },
-  { name: "Next.js", logo: "/logos/nextjs.png" },
-  { name: "NestJS", logo: "/logos/nestjs.png" },
-  { name: "Tailwind CSS", logo: "/logos/tailwind.png" },
+  { name: 'HTML', logo: '/logos/html.webp' },
+  { name: 'CSS', logo: '/logos/css.webp' },
+  { name: 'JavaScript', logo: '/logos/js.webp' },
+  { name: 'TypeScript', logo: '/logos/typescript.png' },
+  { name: 'React', logo: '/logos/react.jpeg' },
+  { name: 'Bootstrap', logo: '/logos/bootstrap.png' },
+  { name: 'Next.js', logo: '/logos/nextjs.png' },
+  { name: 'NestJS', logo: '/logos/nestjs.png' },
+  { name: 'Tailwind CSS', logo: '/logos/tailwind.png' },
 ] as TechProps[];
 
 const backEnd = [
-  { name: "Node.js", logo: "/logos/node.webp" },
-  { name: "Express", logo: "/logos/express.png" },
-  { name: "Python", logo: "/logos/python.png" },
-  { name: "Java", logo: "/logos/java.png" },
-  { name: "Prisma", logo: "/logos/prisma.svg" },
-  { name: "GraphQL", logo: "/logos/graphql.png" },
-  { name: "Apollo", logo: "/logos/apollo.jpeg" },
-  { name: "REST API", logo: "/logos/rest-api.png" },
-  { name: "Socket.io", logo: "/logos/socketio.png" },
+  { name: 'Node.js', logo: '/logos/node.webp' },
+  { name: 'Express', logo: '/logos/express.png' },
+  { name: 'Python', logo: '/logos/python.png' },
+  { name: 'Java', logo: '/logos/java.png' },
+  { name: 'Prisma', logo: '/logos/prisma.svg' },
+  { name: 'GraphQL', logo: '/logos/graphql.png' },
+  { name: 'Apollo', logo: '/logos/apollo.jpeg' },
+  { name: 'REST API', logo: '/logos/rest-api.png' },
+  { name: 'Socket.io', logo: '/logos/socketio.png' },
 ] as TechProps[];
 
 const devOps = [
-  { name: "Docker", logo: "/logos/docker.jpeg" },
-  { name: "GitHub Actions", logo: "/logos/github-action.png" },
-  { name: "SQL", logo: "/logos/sql.png" },
-  { name: "MongoDB", logo: "/logos/mongo-db.png" },
-  { name: "PostgreSQL", logo: "/logos/postgresql.png" },
+  { name: 'Docker', logo: '/logos/docker.jpeg' },
+  { name: 'GitHub Actions', logo: '/logos/github-action.png' },
+  { name: 'SQL', logo: '/logos/sql.png' },
+  { name: 'MongoDB', logo: '/logos/mongo-db.png' },
+  { name: 'PostgreSQL', logo: '/logos/postgresql.png' },
 ] as TechProps[];
 
 type TechProps = {
@@ -47,7 +47,7 @@ const circleContainerVariants = {
   initial: {},
   animate: {
     transition: {
-      when: "beforeChildren",
+      when: 'beforeChildren',
       staggerChildren: 0.25, // délai entre l'apparition de chaque cercle
     },
   },
@@ -66,17 +66,17 @@ type ColumnProps = {
 
 const columns = [
   {
-    title: "Back-end",
+    title: 'Back-end',
     data: backEnd,
     initialScale: 0.8,
   },
   {
-    title: "Front-end",
+    title: 'Front-end',
     data: frontEnd,
     initialScale: 0.8,
   },
   {
-    title: "DevOps - DataBase",
+    title: 'DevOps - DataBase',
     data: devOps,
     initialScale: 0.8,
   },
@@ -137,12 +137,12 @@ export default function LanguageGrid() {
       if (containerRef.current && window.innerWidth < 768) {
         setContainerHeight(containerRef.current.clientWidth);
       } else {
-        setContainerHeight("100%");
+        setContainerHeight('100%');
       }
     }
     updateHeight();
-    window.addEventListener("resize", updateHeight);
-    return () => window.removeEventListener("resize", updateHeight);
+    window.addEventListener('resize', updateHeight);
+    return () => window.removeEventListener('resize', updateHeight);
   }, []);
 
   return (

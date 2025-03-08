@@ -51,83 +51,86 @@
         "link": "Link"
       },
       "swimming": {
-        "title": "Swimming",
-        "description": "Started at 6 - Competitive until 17"
+        "title": "🏊 Swimming",
+        "description": "At 6 years old - Competitive until 17"
       },
       "piano": {
-        "title": "Piano",
-        "description": "Started at 7 - Still practicing"
+        "title": "🎹 Piano",
+        "description": "At 7 years old - Still practicing"
       },
       "informatique": {
-        "title": "Computing",
-        "description": "Started at 14 - Student at Epitech since 2023"
+        "title": "💻 Computer Science",
+        "description": "At 14 years old - Epitech student since 2023"
       },
       "art": {
-        "title": "Art and Design",
+        "title": "🎨 Art and Design",
         "description": "From 2021 to 2023"
       },
       "trading-chart-ai": {
-        "title": "Trading Chart AI",
-        "description": "Web application to predict stock prices. It displays trading indicators, retrieves data via an API, stores information in a database, and processes it with a machine learning model."
+        "title": "📈 Trading Chart AI",
+        "description": "Trading Chart AI is a Python project combining finance and AI. It retrieves and stores price histories enriched with indicators, then uses machine learning to generate buy/sell signals. A Pygame interface displays real-time (or replay) prices, indicators, and signals, allowing validation of prediction consistency. This project helped me develop skills in Python, market finance, and AI."
       },
       "machine-learning-experiment": {
-        "title": "Machine Learning Experiment",
-        "description": "Machine learning experiment aimed at making predictions and developing an agent capable of learning to play a game."
+        "title": "🤖 Machine Learning Experiment",
+        "description": "A project exploring the mathematical foundations of machine learning. Coded in Python without frameworks, the agent uses reinforcement learning in a small 2D survival game (via matplotlib and Pygame) to achieve an optimal score."
       },
       "medieval-tower": {
-        "title": "Medieval Tower",
-        "description": "2D game inspired by Mario, featuring entity management using Java classes, a custom 2D game engine, and a medieval style, developed as part of an Epitech project."
+        "title": "🏰 Medieval Tower",
+        "description": "An Epitech project to learn OOP in Java with LibGDX. Inspired by platform games, “Medieval Tower” features a medieval style with fluid, dynamic gameplay, focusing on entity management and a custom 2D engine."
       },
       "portfolio-first": {
-        "title": "First Portfolio",
-        "description": "Website showcasing my projects."
+        "title": "🌐 First Portfolio",
+        "description": "A presentation website built with HTML, CSS, and JavaScript. Featuring a clean interface, smooth animations, and responsive design for an optimized mobile and desktop experience. It highlights my projects, skills, and achievements with a modern, interactive design."
       },
       "le-costumier": {
-        "title": "Le Costumier",
-        "description": "Website for an elegant and modern clothing store."
+        "title": "👔 Le Costumier",
+        "description": "A website created for a clothing store with an elegant, modern style. A polished interface, smooth navigation, and responsive design offer an optimal user experience, showcasing collections and facilitating product exploration."
       },
       "dino-runner-ai": {
-        "type": "project",
-        "title": "Dino Runner AI",
-        "description": "Game inspired by Google's Dino, featuring parallel training and the development of a machine learning AI to play automatically."
+        "title": "🦖 Dino Runner AI",
+        "description": "A game inspired by Google’s Dino, integrating parallel training and the development of a machine learning AI that plays automatically."
       },
       "job-hunters": {
-        "title": "JobHunters",
-        "description": "Web application that allows searching for job offers, developed as part of an Epitech project."
+        "title": "🔍 JobHunters",
+        "description": "A web application for job searches, developed as part of an Epitech project."
       },
       "this-portfolio": {
-        "title": "My Portfolio",
-        "description": "Website showcasing my projects and my profile."
+        "title": "📜 My Portfolio",
+        "description": "An interactive portfolio showcasing my projects and profile. Designed with a clean look and mobile optimization, it presents my achievements, skills, and experiences in a fluid and dynamic manner."
       },
       "epitech-lille": {
-        "title": "Epitech Lille",
-        "description": "5-year project-based training, emphasizing autonomy, innovation, and intensive development practice.",
+        "title": "🏫 Epitech Lille",
+        "description": "A five-year (RNCP Level 7) program in computer expertise, specializing in AI and Big Data. Centered on autonomy, innovation, and intensive hands-on development through real-world projects, it trains experts capable of designing advanced, high-performance solutions.",
         "location": "Beaux Arts, Lille"
       },
       "karbon": {
-        "title": "Fullstack Developer at Karbon",
-        "description": "Internship/Apprenticeship where I participated in the development of web applications, working with an agile team, database management, and continuous integration.",
+        "title": "💼 Fullstack Apprentice at Karbon",
+        "description": "Fullstack developer apprentice at Karbon.earth, a company specialized in ecology and the agrifood sector, focusing on environmental impact assessment. Responsible for improving the web application’s features.",
         "location": "Euratechnologies, Lille"
       },
       "prepa-cpge": {
-        "title": "CPGE, Technology and Industrial Sciences",
-        "description": "Two years of preparation for engineering school entrance exams, with a specialization in Engineering Sciences.",
-        "location": "Pierre de Coubertin High School, Meaux"
+        "title": "📚 CPGE, TSI",
+        "description": "Two years of preparatory classes (CPGE) specialized in Engineering Sciences. Intensive training in math, physics, and computer science, preparing for engineering school entrance exams.",
+        "location": "Lycée Pierre de Coubertin, Meaux"
       },
       "baccalaureat": {
-        "title": "STI2D Baccalaureate",
-        "description": "Specialization in SIN (Information and Digital Systems) - With honors",
-        "location": "La Fayette High School, Champagne-sur-Seine"
+        "title": "🎓 STI2D Baccalaureate",
+        "description": "Specialized in SIN (Information and Digital Systems), focusing on electronics, IT, and networks. Acquired programming, embedded systems, and digital communication skills. Earned the diploma with honors (Mention Bien).",
+        "location": "Lycée La Fayette, Champagne-sur-Seine"
       },
       "hillgrove-hotel": {
-        "title": "Maintenance Agent in Ireland",
-        "description": "Teamwork in an English-speaking environment. Responsible for cleaning and maintaining rooms to ensure high-quality service.",
-        "location": "Ireland, Monaghan"
+        "title": "🛏️ Maintenance Worker in Ireland",
+        "description": "Team-based experience in an English-speaking environment. Responsible for cleaning and maintaining rooms, ensuring quality service and adherence to hotel standards.",
+        "location": "Monaghan, Ireland"
       },
       "sopra-banking": {
-        "title": "Discovery Internship at Sopra",
-        "description": "Observation of the development of banking software aimed at optimizing transaction volume.",
-        "location": "France, Montreuil"
+        "title": "🏦 Discovery Internship at Sopra",
+        "description": "An observation internship in high school (10th grade), focusing on discovering IT professions. Immersion in the development of banking software aiming to optimize transaction volume, providing insights into the processes and challenges of the sector.",
+        "location": "Montreuil, France"
+      },
+      "map-2d-procedural": {
+        "title": "🗺️ Procedural 2D Map",
+        "description": "A personal Python project for generating procedural 2D maps. Uses noise generation algorithms to create random maps with various biomes. A Pygame interface visualizes the generated maps."
       }
     }
   },

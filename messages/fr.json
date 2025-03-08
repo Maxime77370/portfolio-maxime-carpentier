@@ -1,140 +1,140 @@
 {
-    "welcome_message": "Bienvenue sur mon portfolio",
-    "nav": {
-      "name": "Maxime Carpentier",
-      "slogan": "Code, Créativité & Innovation",
-      "home": "Accueil",
-      "about": "À propos",
-      "timeline": "Chronologie",
-      "contact": "Contact"
-    },
-    "hero": {
-      "0": {
+  "welcome_message": "Bienvenue sur mon portfolio",
+  "nav": {
+    "name": "Maxime Carpentier",
+    "slogan": "Code, Créativité & Innovation",
+    "home": "Accueil",
+    "about": "À propos",
+    "timeline": "Chronologie",
+    "contact": "Contact"
+  },
+  "hero": {
+    "0": {
       "title": "Développeur\nfront\u2011end",
       "subtitle": "Je développe de belles interfaces\navec les dernières technologies"
-      },
-      "1": {
+    },
+    "1": {
       "title": "Développeur\nback\u2011end",
       "subtitle": "Je crée des API et des bases de données\nlogiques et détaillées"
-      },
-      "2": {
+    },
+    "2": {
       "title": "Développeur\nfull-stack",
       "subtitle": "Je crée des sites web complets et performants"
-      }
-    },  
-    "presentation": {
-      "title": "À propos de moi",
-      "loisirs": "Loisirs",
-      "shortContent": "Étudiant en 4ᵉ année à Epitech Lille, passionné par l’informatique et les nouvelles technologies depuis mes 14 ans.",
-      "learnMore": "En savoir plus",
-      "modalTitle": "À propos de moi",
-      "fullContent": "Je recherche une alternance d’un an et demi pour mettre en pratique mes compétences. Mon rythme 2 jours à l’école, 3 en entreprise me permet d’être rapidement opérationnel et pleinement investi dans les projets qui me sont confiés.",
-      "resumeTitle": "Mon Profil",
-      "close": "Fermer",
-      "header": {
-        "name": "Maxime Carpentier",
-        "title": "Développeur Fullstack en Alternance",
-        "linkedin": "LinkedIn",
-        "github": "GitHub"
-      },
-      "expertise": {
-        "title": "Expertises",
-        "item1": "Création d'API REST & GraphQL",
-        "item2": "Gestion de bases de données",
-        "item3": "Travail en équipe & Design Thinking"
-      },
-      "timeline": {
-        "modal": {
-          "description": "Description",
-          "location": "Lieu",
-          "technologies": "Technologies",
-          "link": "Lien"
-        },
-        "swimming": {
-          "title": "Piscine",
-          "description": "À 6 ans - Compétitif jusqu'à 17 ans"
-        },
-        "piano": {
-          "title": "Piano",
-          "description": "À 7 ans - Toujours en pratique"
-        },
-        "informatique": {
-          "title": "Informatique",
-            "description": "À 14 ans - Étudiant à Epitech depuis 2023"
-        },
-        "art": {
-          "title": "Art et Design",
-          "description": "De 2021 à 2023"
-        },
-        "trading-chart-ai": {
-          "title": "Trading Chart IA",
-          "description": "Application web pour prédire les cours de la bourse. Elle affiche des indicateurs de trading, récupère des données via une API, stocke les informations dans une base de données et les traite avec un modèle de machine learning."
-        },
-        "machine-learning-experiment": {
-          "title": "Machine Learning Experiment",
-          "description": "Expérience en machine learning visant à réaliser des prédictions et à développer un agent capable d'apprendre à jouer à un jeu."       
-        },
-        "medieval-tower": {
-          "title": "Medieval Tower",
-          "description": "Jeu 2D inspiré de Mario, intégrant la gestion des entités via des classes Java, un moteur de jeu 2D personnalisé et un style médiéval, développé dans le cadre d'un projet à Epitech."
-        },
-        "portfolio-first": {
-          "title": "Premier Portfolio",
-          "description": "Site web de présentation de mes projets."
-        },
-        "le-costumier": {
-          "title": "Le Costumier",
-          "description": "Site web d'un magasin de vêtements élégant et moderne."
-        },
-        "dino-runner-ai": {
-          "type": "project",
-          "title": "Dino Runner IA",
-          "description": "Jeu inspiré du Dino de Google, intégrant un entraînement parallèle et le développement d'une IA de machine learning pour jouer automatiquement."
-        },
-        "job-hunters": {
-          "title": "JobHunters",
-          "description": "Application web permettant de rechercher des offres d'emploi, réalisée dans le cadre d'un projet à Epitech."
-        },
-        "this-portfolio": {
-          "title": "Mon Portfolio",
-          "description": "Site web présentant mes projets et mon profil."
-        },
-        
-        "epitech-lille": {
-          "title": "Epitech Lille",
-          "description": "Formation sur 5 ans orientée autour de projets, mettant l’accent sur l’autonomie, l’innovation et la pratique intensive du développement.",
-          "location": "Beaux Arts, Lille"
-        },
-    
-        "karbon": {
-          "title": "Développeur Fullstack chez Karbon",
-          "description": "Stage / Alternance où j’ai participé au développement d’applications web, avec une équipe agile, gestion de bases de données et intégration continue.",
-          "location": "Euratechnologies, Lille"
-        },
-        "prepa-cpge": {
-          "title": "CPGE, Technologie et Sciences Industrielles",
-          "description": "Deux ans de préparation aux concours des écoles d’ingénieurs, avec une spécialisation en Sciences de l’Ingénieur.",
-          "location": "Lycée Pierre de Coubertin, Meaux"
-        },
-        "baccalaureat": {
-          "title": "Baccalauréat STI2D",
-          "description": "Spécialité SIN (Systèmes d’Information et Numérique) - Mention Bien",
-          "location": "Lycée La Fayette, Champagne-sur-Seine"
-        },
-        "hillgrove-hotel": {
-          "title": "Agent d’entretien en Irlande",
-          "description": "Travail en équipe dans un environnement anglophone. Gestion du nettoyage et de l’entretien des chambres pour garantir une prestation de qualité.",
-          "location": "Irlande, Monaghan"
-        },
-        "sopra-banking": {
-          "title": "Stage de Découverte chez Sopra",
-          "description": "Observation du développement d’un logiciel bancaire visant à optimiser le volume des transactions.",
-          "location": "France, Montreuil"
-        }
-      }
-    },
-    "footer": {
-      "rights": "Tous droits réservés"
     }
+  },
+  "presentation": {
+    "title": "À propos de moi",
+    "loisirs": "Loisirs",
+    "shortContent": "Étudiant en 4ᵉ année à Epitech Lille, passionné par l’informatique et les nouvelles technologies depuis mes 14 ans.",
+    "learnMore": "En savoir plus",
+    "modalTitle": "À propos de moi",
+    "fullContent": "Je recherche une alternance d’un an et demi pour mettre en pratique mes compétences. Mon rythme 2 jours à l’école, 3 en entreprise me permet d’être rapidement opérationnel et pleinement investi dans les projets qui me sont confiés.",
+    "resumeTitle": "Mon Profil",
+    "close": "Fermer",
+    "header": {
+      "name": "Maxime Carpentier",
+      "title": "Développeur Fullstack en Alternance",
+      "linkedin": "LinkedIn",
+      "github": "GitHub"
+    },
+    "expertise": {
+      "title": "Expertises",
+      "item1": "Création d'API REST & GraphQL",
+      "item2": "Gestion de bases de données",
+      "item3": "Travail en équipe & Design Thinking"
+    },
+    "timeline": {
+      "modal": {
+        "description": "Description",
+        "location": "Lieu",
+        "technologies": "Technologies",
+        "link": "Lien"
+      },
+      "swimming": {
+        "title": "🏊 Piscine",
+        "description": "À 6 ans - Compétitif jusqu'à 17 ans"
+      },
+      "piano": {
+        "title": "🎹 Piano",
+        "description": "À 7 ans - Toujours en pratique"
+      },
+      "informatique": {
+        "title": "💻 Informatique",
+        "description": "À 14 ans - Étudiant à Epitech depuis 2023"
+      },
+      "art": {
+        "title": "🎨 Art et Design",
+        "description": "De 2021 à 2023"
+      },
+      "trading-chart-ai": {
+        "title": "📈 Trading Chart IA",
+        "description": "Trading Chart IA est un projet Python alliant finance et IA. Il récupère et stocke des historiques de prix enrichis d’indicateurs, puis utilise du machine learning pour générer des signaux d’achat/vente. Une interface Pygame affiche en temps réel (ou en replay) les cours, indicateurs et signaux, permettant de valider la cohérence des prédictions. Ce projet m’a permis de développer mes compétences en Python, en finance de marché et en IA."
+      },
+      "machine-learning-experiment": {
+        "title": "🤖 Machine Learning Experiment",
+        "description": "Projet explorant les bases mathématiques du machine learning. Codé en Python sans frameworks, l'agent utilise l’apprentissage par renforcement dans un petit jeu 2D de survie (via matplotlib et Pygame) pour viser un score optimal."
+      },
+      "medieval-tower": {
+        "title": "🏰 Medieval Tower",
+        "description": "Projet Epitech pour apprendre la POO en Java avec LibGDX. Inspiré des jeux de plateforme, “Medieval Tower” propose un style médiéval et un gameplay fluide et dynamique, mettant l’accent sur la gestion d’entités et un moteur 2D personnalisé."
+      },
+      "portfolio-first": {
+        "title": "🌐 Premier Portfolio",
+        "description": "Site web de présentation développé en HTML, CSS et JavaScript. Interface épurée avec animations fluides et responsive design pour une expérience optimisée sur mobile et desktop. Il met en avant mes projets, compétences et réalisations avec un design moderne et interactif."
+      },
+      "le-costumier": {
+        "title": "👔 Le Costumier",
+        "description": "Site web conçu pour un magasin de vêtements au style élégant et moderne. Interface soignée, navigation fluide et design responsive pour une expérience utilisateur optimale, mettant en valeur les collections et facilitant l'exploration des produits."
+      },
+      "dino-runner-ai": {
+        "title": "🦖 Dino Runner IA",
+        "description": "Jeu inspiré du Dino de Google, intégrant un entraînement parallèle et le développement d'une IA de machine learning pour jouer automatiquement."
+      },
+      "job-hunters": {
+        "title": "🔍 JobHunters",
+        "description": "Application web permettant de rechercher des offres d'emploi, réalisée dans le cadre d'un projet à Epitech."
+      },
+      "this-portfolio": {
+        "title": "📜 Mon Portfolio",
+        "description": "Portfolio interactif mettant en avant mes projets et mon profil. Conçu avec un design épuré et optimisé pour mobile, il présente mes réalisations, compétences et expériences de manière fluide et dynamique.."
+      },
+      "epitech-lille": {
+        "title": "🏫 Epitech Lille",
+        "description": "Formation sur 5 ans (RNCP Niveau 7) en expertise informatique, spécialisée en IA et Big Data. Axée sur l’autonomie, l’innovation et la pratique intensive du développement à travers des projets concrets, elle forme des experts capables de concevoir des solutions avancées et performantes.",
+        "location": "Beaux Arts, Lille"
+      },
+      "karbon": {
+        "title": "💼 Développeur Fullstack chez Karbon",
+        "description": "Alternant développeur fullstack chez Karbon.earth, entreprise spécialisée en écologie et agroalimentaire dédiée à l’évaluation de l’impact environnemental. Chargé d’améliorer les fonctionnalités de l’application web.",
+        "location": "Euratechnologies, Lille"
+      },
+      "prepa-cpge": {
+        "title": "📚 CPGE, TSI",
+        "description": "Deux ans de classe préparatoire aux grandes écoles (CPGE), spécialisés en Sciences de l’Ingénieur. Formation intensive en mathématiques, physique et informatique, préparant aux concours des écoles d’ingénieurs.",
+        "location": "Lycée Pierre de Coubertin, Meaux"
+      },
+      "baccalaureat": {
+        "title": "🎓 Baccalauréat STI2D",
+        "description": "Spécialité SIN (Systèmes d’Information et Numérique) avec une approche axée sur l’électronique, l’informatique et les réseaux. Acquisition de compétences en programmation, systèmes embarqués et communication numérique. Obtention du diplôme avec Mention Bien.",
+        "location": "Lycée La Fayette, Champagne-sur-Seine"
+      },
+      "hillgrove-hotel": {
+        "title": "🛏️ Agent d’entretien en Irlande",
+        "description": "Expérience en équipe dans un environnement anglophone. Responsable du nettoyage et de l’entretien des chambres, en assurant un service de qualité et le respect des standards hôteliers.",
+        "location": "Irlande, Monaghan"
+      },
+      "sopra-banking": {
+        "title": "🏦 Stage de Découverte chez Sopra",
+        "description": "Stage d'observation en seconde, axé sur la découverte des métiers de l'informatique. Immersion dans le développement d’un logiciel bancaire visant à optimiser le volume des transactions, permettant de mieux comprendre les processus et les enjeux du secteur.",
+        "location": "France, Montreuil"
+      },
+      "map-2d-procedural": {
+        "title": "🗺️ Map 2D Procédurale",
+        "description": "Projet personnel de génération de cartes 2D procédurales en Python. Utilisation d’algorithmes de génération de bruit pour créer des cartes aléatoires, avec des biomes. Interface Pygame pour visualiser les cartes générées."
+      }
+    }
+  },
+  "footer": {
+    "rights": "Tous droits réservés"
+  }
 }
-  
