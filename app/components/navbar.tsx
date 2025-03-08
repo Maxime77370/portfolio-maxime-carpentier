@@ -8,7 +8,6 @@ const navItems = [
   { key: 'home', href: '#' },
   { key: 'about', href: '#about' },
   { key: 'timeline', href: '#timeline' },
-  { key: 'contact', href: '#contact' },
 ];
 
 export default function NavBar() {

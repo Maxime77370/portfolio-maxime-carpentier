@@ -51,19 +51,19 @@
         "link": "Lien"
       },
       "swimming": {
-        "title": "🏊 Piscine",
+        "title": "Piscine",
         "description": "À 6 ans - Compétitif jusqu'à 17 ans"
       },
       "piano": {
-        "title": "🎹 Piano",
+        "title": "Piano",
         "description": "À 7 ans - Toujours en pratique"
       },
       "informatique": {
-        "title": "💻 Informatique",
+        "title": "Informatique",
         "description": "À 14 ans - Étudiant à Epitech depuis 2023"
       },
       "art": {
-        "title": "🎨 Art et Design",
+        "title": "Art et Design",
         "description": "De 2021 à 2023"
       },
       "trading-chart-ai": {

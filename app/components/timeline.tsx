@@ -75,7 +75,7 @@ export default function ProjectTimeline() {
   return (
     <>
       <div
-        className="relative w-full max-w-5xl mx-auto py-4 px-4"
+        className="relative w-full max-w-5xl mx-auto py-4 sm:py-8 md:py-12 lg:py-16 px-4"
         id="timeline"
       >
         {/* Ligne verticale */}
