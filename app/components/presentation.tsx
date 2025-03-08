@@ -12,7 +12,7 @@ export default function Presentation() {
 
     const openModal = () => {
         setIsModalOpen(true);
-        track("presentation_modal_opened");
+        track('My Event', {}, { flags: ['summer-sale'] });
     };
 
     const closeModal = () => {
