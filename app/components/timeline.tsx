@@ -46,18 +46,18 @@ export default function ProjectTimeline() {
   const [contentHeight, setContentHeight] = useState(0);
 
   useEffect(() => {
-    const updateHeight = (marge: number) => {
+    const updateHeight = () => {
       if (showMore && contentRef.current) {
-        setContentHeight(contentRef.current.scrollHeight - marge); // 14px de marge
+        setContentHeight(contentRef.current.scrollHeight);
       } else if (isCollapsing && contentRef.current) {
         setContentHeight(0);
       }
     };
 
-    updateHeight(14); // 14px de marge
+    updateHeight();
 
-    window.addEventListener('resize', () => updateHeight(0));
-    return () => window.removeEventListener('resize', () => updateHeight(0));
+    window.addEventListener('resize', () => updateHeight());
+    return () => window.removeEventListener('resize', () => updateHeight());
   }, [showMore, isCollapsing]);
 
   const handleToggle = () => {
