@@ -2,6 +2,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
+import { track } from "@vercel/analytics";
 
 import PresentationModal from "./presentation-modal";
 
@@ -9,8 +10,14 @@ export default function Presentation() {
     const t = useTranslations();
     const [isModalOpen, setIsModalOpen] = useState(false);
 
-    const openModal = () => setIsModalOpen(true);
-    const closeModal = () => setIsModalOpen(false);
+    const openModal = () => {
+        setIsModalOpen(true);
+        track("presentation_modal_opened");
+    };
+
+    const closeModal = () => {
+        setIsModalOpen(false);
+    };
 
     return (
         <>
