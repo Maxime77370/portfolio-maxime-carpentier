@@ -3,9 +3,9 @@
 import React from 'react';
 import NavBar from 'components/navbar';
 import Hero from 'components/hero';
-import Presentation from 'components/presentation';
-import ProjectTimeline from '../components/timeline';
-import LanguageGrid from '../components/language-grid';
+import Presentation from '@/app/components/presentation/presentation';
+import ProjectTimeline from '../components/timeline/timeline';
+import TechnologieGrid from '../components/technologie-grid';
 import Footer from '../components/footer';
 
 export default function HomePage() {
@@ -15,7 +15,7 @@ export default function HomePage() {
       <Hero />
       <Presentation />
       <ProjectTimeline />
-      <LanguageGrid />
+      <TechnologieGrid />
       <Footer />
     </div>
   );

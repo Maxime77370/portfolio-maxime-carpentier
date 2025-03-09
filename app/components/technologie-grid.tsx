@@ -135,7 +135,7 @@ function Column({ title, data, initialScale }: ColumnProps) {
     </motion.div>
   );
 }
-export default function LanguageGrid() {
+export default function TechnologieGrid() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [containerHeight, setContainerHeight] = useState<number | string>(0);
 
