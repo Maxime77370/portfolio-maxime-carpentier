@@ -114,9 +114,17 @@ function Column({ title, data, initialScale }: ColumnProps) {
               variants={circleVariants}
               transition={{ duration: 0.5 }}
             >
-              <div className="w-12 h-12 md:h-14 md:w-14 lg:h-18 lg:w-18 rounded-full bg-white shadow-md flex items-center justify-center">
-                <Image src={tech.logo} alt={tech.name} width={36} height={36} />
+              <div className="relative w-10 h-10 sm:w-14 sm:h-14 md:h-12 md:w-12 lg:h-18 lg:w-18 rounded-full bg-white shadow-md flex items-center justify-center p-1">
+                <div className="relative w-4 h-4 sm:w-10 sm:h-10 md:w-8 md:h-8 lg:w-10 lg:h-10">
+                  <Image
+                    src={tech.logo}
+                    alt={tech.name}
+                    layout="fill"
+                    objectFit="contain"
+                  />
+                </div>
               </div>
+
               <p className="mt-1 sm:mt-2 text-white text-xs sm:text-sm md:text-lg whitespace-nowrap text-center">
                 {tech.name}
               </p>
@@ -175,7 +183,7 @@ export default function LanguageGrid() {
             style={{ height: containerHeight }}
           >
             {/* Grille responsive : 1 colonne sur mobile, 3 colonnes sur md+ */}
-            <div className="w-full grid grid-cols-1 md:grid-cols-3 p-4 gap-4 md:gap-10 relative">
+            <div className="w-full grid grid-cols-1 md:grid-cols-3 py-2 md:py-4 gap-4 md:gap-10 relative">
               {columns.map((col, index) => (
                 <React.Fragment key={col.title}>
                   <Column

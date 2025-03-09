@@ -97,7 +97,7 @@ const createVariants = (
 const cardVariants = createVariants(
   { opacity: 0, y: 30 },
   { opacity: 1, y: 0 },
-  { opacity: 0, y: -30 },
+  { opacity: 0, y: 0 },
   0.2
 );
 
