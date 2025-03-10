@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
@@ -221,7 +223,7 @@ function MiddleList({
               //add year each time we have a new year
               textChildren={
                 item.date.split('-')[0] !==
-                  items[i - 1]?.date.split('-')[0] && (
+                items[i - 1]?.date.split('-')[0] && (
                   <>
                     <div className="pr-2 md:pr-0 w-1/2 text-2xl sm:text-5xl md:text-6xl uppercase tracking-wide leading-tight text-gray-200">
                       <span className="bg-gradient-to-tl from-indigo-500 via-purple-500 to-pink-600 bg-clip-text text-transparent">

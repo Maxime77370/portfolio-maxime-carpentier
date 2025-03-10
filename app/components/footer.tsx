@@ -1,9 +1,7 @@
 import { FaGithub, FaLinkedin, FaEnvelope, FaPhone } from 'react-icons/fa';
 import * as motion from 'motion/react-client';
-import { useTranslations } from 'next-intl';
 
 export default function Footer() {
-  const t = useTranslations();
 
   const baseMotionProps = {
     initial: { opacity: 0, y: 20 },
@@ -20,10 +18,10 @@ export default function Footer() {
     <footer className="bg-gray-900 text-white py-6 mt-12">
       <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
         {/* Nom et Copyright */}
-        <motion.div className="text-center md:text-left" {...baseMotionProps}>
+        <motion.div className="flex text-center items-baseline md:text-left" {...baseMotionProps}>
           <p className="text-lg font-semibold">Carpentier Maxime</p>
-          <p className="text-sm text-gray-400">
-            © 2025 - {t('footer.rights')}
+          <p className="ml-2 text-sm text-gray-400">
+            © 2025
           </p>
         </motion.div>
 

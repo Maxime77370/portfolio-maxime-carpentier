@@ -1,10 +1,8 @@
-'use client';
-
 import React from 'react';
 import { FaGithub, FaNetworkWired } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import { DictionaryItem } from './timeline-dict';
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import { FaInfo } from 'react-icons/fa';
 
 const overlayVariants = {
@@ -41,17 +39,20 @@ interface ModalProps {
 function getDivField(item: DictionaryItem, field: keyof DictionaryItem) {
   if (!item[field]) return null;
 
+  // Classe de base commune à la plupart des conteneurs
+  const baseClasses = "bg-white shadow-md rounded-lg p-4 my-1";
+
   switch (field) {
     case 'description':
       return (
-        <div className="flex items-center gap-4 bg-white shadow-md rounded-lg p-4 mt-2">
+        <div className={`${baseClasses} flex items-center gap-4`}>
           <FaInfo className="w-5 h-5 ml-1 hidden md:block" />
           <p className="text-gray-800">{item[field]}</p>
         </div>
       );
     case 'technologies':
       return (
-        <div className="flex flex-wrap gap-2 mt-2 w-full justify-center">
+        <div className={`${baseClasses} flex flex-wrap gap-2 w-full justify-center`}>
           {item[field]?.split(',').map((tech, index) => (
             <span
               key={index}
@@ -64,18 +65,18 @@ function getDivField(item: DictionaryItem, field: keyof DictionaryItem) {
       );
     case 'location':
       if (!item.mapUrl) {
-        return <span className="text-gray-500">{item[field]}</span>;
+        return (
+          <div className={baseClasses}>
+            <span className="text-gray-500">{item[field]}</span>
+          </div>
+        );
       }
-      return;
+      // Si une mapUrl est présente, on peut choisir de gérer la carte dans "mapUrl"
+      return null;
     case 'link':
       if (item.link) {
         return (
-          <a
-            href={item.link.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center space-x-2 hover:underline bg-white shadow-md rounded-lg p-2 mt-2"
-          >
+          <div className={`${baseClasses} flex items-center space-x-2`}>
             {(() => {
               switch (item.link?.icon) {
                 case 'github':
@@ -86,28 +87,40 @@ function getDivField(item: DictionaryItem, field: keyof DictionaryItem) {
                   return null;
               }
             })()}
-            <span className="text-gray-800">{item.link.url}</span>
-          </a>
+            <a
+              href={item.link.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:underline text-gray-800"
+            >
+              {item.link.url}
+            </a>
+          </div>
         );
       }
       return null;
     case 'date':
-      return <span className="text-gray-500">{item[field]}</span>;
+      return (
+        <div className={baseClasses}>
+          <span className="text-gray-500">{item[field]}</span>
+        </div>
+      );
     case 'mapUrl':
       return (
-        <iframe
-          src={item.mapUrl}
-          width="100%"
-          height="200"
-          style={{ border: 0, borderRadius: 20 }}
-          allowFullScreen
-          loading="lazy"
-        ></iframe>
+        <div className={baseClasses}>
+          <iframe
+            src={item.mapUrl}
+            width="100%"
+            height="200"
+            style={{ border: 0, borderRadius: 20 }}
+            allowFullScreen
+            loading="lazy"
+          ></iframe>
+        </div>
       );
     case 'images':
-      console.log(item.images);
       return (
-        <div className="w-full grid grid-cols-1 gap-2 mt-2">
+        <div className={`${baseClasses} grid grid-cols-1 gap-2`}>
           {item.images?.map((img, i) => (
             <Image
               key={i}
@@ -122,7 +135,7 @@ function getDivField(item: DictionaryItem, field: keyof DictionaryItem) {
       );
     case 'title':
       return (
-        <header className="flex items-center justify-between gap-4 bg-white shadow-md rounded-lg py-4 px-2 mt-2">
+        <header className={`${baseClasses} flex items-center justify-between gap-4`}>
           <div className="flex items-center gap-4">
             <h3 className="text-2xl text-gray-900 font-bold">{item.title}</h3>
           </div>
@@ -133,6 +146,7 @@ function getDivField(item: DictionaryItem, field: keyof DictionaryItem) {
       return null;
   }
 }
+
 
 const EnhancedModalBase: React.FC<ModalProps> = ({ item, onClose, fields }) => {
   return (
@@ -163,13 +177,13 @@ const EnhancedModalBase: React.FC<ModalProps> = ({ item, onClose, fields }) => {
         {/* Parcours et rendu des champs définis */}
         {fields.map((field) => {
           return (
-            <section key={field} className="mb-2">
+            <section key={field}>
               {getDivField(item, field)}
             </section>
           );
         })}
       </motion.div>
-    </motion.div>
+    </motion.div >
   );
 };
 

@@ -133,8 +133,5 @@
         "description": "A personal Python project for generating procedural 2D maps. Uses noise generation algorithms to create random maps with various biomes. A Pygame interface visualizes the generated maps."
       }
     }
-  },
-  "footer": {
-    "rights": "All rights reserved"
   }
 }

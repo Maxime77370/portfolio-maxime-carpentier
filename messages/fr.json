@@ -133,8 +133,5 @@
         "description": "Projet personnel de génération de cartes 2D procédurales en Python. Utilisation d’algorithmes de génération de bruit pour créer des cartes aléatoires, avec des biomes. Interface Pygame pour visualiser les cartes générées."
       }
     }
-  },
-  "footer": {
-    "rights": "Tous droits réservés"
   }
 }

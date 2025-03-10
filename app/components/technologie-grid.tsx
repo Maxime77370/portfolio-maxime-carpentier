@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useRef, useState } from 'react';
-import Image from 'next/image';
+import Image from "next/image";
 import { motion } from 'framer-motion';
 
 // --- Exemple de listes de technologies par catégorie
@@ -9,32 +9,32 @@ const frontEnd = [
   { name: 'HTML', logo: '/logos/html.webp' },
   { name: 'CSS', logo: '/logos/css.webp' },
   { name: 'JavaScript', logo: '/logos/js.webp' },
-  { name: 'TypeScript', logo: '/logos/typescript.png' },
-  { name: 'React', logo: '/logos/react.jpeg' },
-  { name: 'Bootstrap', logo: '/logos/bootstrap.png' },
-  { name: 'Next.js', logo: '/logos/nextjs.png' },
-  { name: 'NestJS', logo: '/logos/nestjs.png' },
-  { name: 'Tailwind CSS', logo: '/logos/tailwind.png' },
+  { name: 'TypeScript', logo: '/logos/typescript.webp' },
+  { name: 'React', logo: '/logos/react.webp' },
+  { name: 'Bootstrap', logo: '/logos/bootstrap.webp' },
+  { name: 'Next.js', logo: '/logos/nextjs.webp' },
+  { name: 'NestJS', logo: '/logos/nestjs.webp' },
+  { name: 'Tailwind CSS', logo: '/logos/tailwind.webp' },
 ] as TechProps[];
 
 const backEnd = [
   { name: 'Node.js', logo: '/logos/node.webp' },
-  { name: 'Express', logo: '/logos/express.png' },
-  { name: 'Python', logo: '/logos/python.png' },
-  { name: 'Java', logo: '/logos/java.png' },
+  { name: 'Express', logo: '/logos/express.webp' },
+  { name: 'Python', logo: '/logos/python.webp' },
+  { name: 'Java', logo: '/logos/java.webp' },
   { name: 'Prisma', logo: '/logos/prisma.svg' },
-  { name: 'GraphQL', logo: '/logos/graphql.png' },
-  { name: 'Apollo', logo: '/logos/apollo.jpeg' },
-  { name: 'REST API', logo: '/logos/rest-api.png' },
-  { name: 'Socket.io', logo: '/logos/socketio.png' },
+  { name: 'GraphQL', logo: '/logos/graphql.webp' },
+  { name: 'Apollo', logo: '/logos/apollo.webp' },
+  { name: 'REST API', logo: '/logos/rest-api.webp' },
+  { name: 'Socket.io', logo: '/logos/socketio.webp' },
 ] as TechProps[];
 
 const devOps = [
-  { name: 'Docker', logo: '/logos/docker.jpeg' },
-  { name: 'GitHub Actions', logo: '/logos/github-action.png' },
-  { name: 'SQL', logo: '/logos/sql.png' },
-  { name: 'MongoDB', logo: '/logos/mongo-db.png' },
-  { name: 'PostgreSQL', logo: '/logos/postgresql.png' },
+  { name: 'Docker', logo: '/logos/docker.webp' },
+  { name: 'GitHub', logo: '/logos/github-action.webp' },
+  { name: 'SQL', logo: '/logos/sql.webp' },
+  { name: 'MongoDB', logo: '/logos/mongo-db.webp' },
+  { name: 'PostgreSQL', logo: '/logos/postgresql.webp' },
 ] as TechProps[];
 
 type TechProps = {
@@ -96,7 +96,7 @@ function Column({ title, data, initialScale }: ColumnProps) {
       viewport={{ once: true }}
       className="w-full"
     >
-      <h2 className="text-center text-white font-bold text-xl mb-4">{title}</h2>
+      <h2 className="text-center text-white font-bold text-xl lg:text-2xl mb-4">{title}</h2>
       {/* Container des cercles avec stagger */}
       <motion.div
         className="grid grid-cols-3 gap-2 sm:gap-4 md:gap-6"
@@ -108,7 +108,7 @@ function Column({ title, data, initialScale }: ColumnProps) {
         <React.Fragment>
           {data.map((tech: TechProps) => (
             // Animation de chaque cercle (apparition, scale)
-            <motion.div
+            (<motion.div
               key={tech.name}
               className="flex flex-col items-center"
               variants={circleVariants}
@@ -124,11 +124,10 @@ function Column({ title, data, initialScale }: ColumnProps) {
                   />
                 </div>
               </div>
-
               <p className="mt-1 sm:mt-2 text-white text-xs sm:text-sm md:text-lg whitespace-nowrap text-center">
                 {tech.name}
               </p>
-            </motion.div>
+            </motion.div>)
           ))}
         </React.Fragment>
       </motion.div>
@@ -179,26 +178,18 @@ export default function TechnologieGrid() {
           style={{ height: containerHeight }}
         >
           <div
-            className="overflow-y-scroll bg-gray-900/30 backdrop-blur-sm py-0 px-0 md:px-8 max-w-[85%] md:max-w-5xl w-full md:max-h-7/10 md:h-full mx-auto flex md:items-center justify-center"
+            className="overflow-y-scroll bg-gray-900/30 backdrop-blur-sm py-0 px-0 md:px-10 max-w-[85%] md:max-w-5xl w-full md:max-h-7/10 md:h-full mx-auto flex md:items-center justify-center"
             style={{ height: containerHeight }}
           >
             {/* Grille responsive : 1 colonne sur mobile, 3 colonnes sur md+ */}
-            <div className="w-full grid grid-cols-1 md:grid-cols-3 py-2 md:py-4 gap-4 md:gap-10 relative">
-              {columns.map((col, index) => (
+            <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-4 py-2 md:gap-16 relative">
+              {columns.map((col) => (
                 <React.Fragment key={col.title}>
                   <Column
                     title={col.title}
                     data={col.data}
                     initialScale={col.initialScale}
                   />
-                  {index < columns.length - 1 && (
-                    <div
-                      className="hidden md:block absolute inset-y-0 w-[1.5px] bg-gray-300/50"
-                      style={{
-                        left: `calc(${(index + 1) * 33.3333}% )`,
-                      }}
-                    />
-                  )}
                 </React.Fragment>
               ))}
             </div>
