@@ -1,31 +1,10 @@
-"use client";
+'use client';
 
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import {
-  ProjectModal,
-  SchoolModal,
-  JobModal,
-  DiplomaModal,
-} from './timeline-item-modal';
 import TimelineItem from './timeline-item';
-
 import useDictionary, { DictionaryItem } from './timeline-dict';
-
-function getTypeModal(type: string) {
-  switch (type) {
-    case 'project':
-      return ProjectModal;
-    case 'school':
-      return SchoolModal;
-    case 'job':
-      return JobModal;
-    case 'diploma':
-      return DiplomaModal;
-    default:
-      return ProjectModal;
-  }
-}
+import DynamicModal from '../modal-dynamic';
 
 export default function ProjectTimeline() {
   // On construit notre array à partir du JSON
@@ -58,8 +37,8 @@ export default function ProjectTimeline() {
 
     updateHeight();
 
-    window.addEventListener('resize', () => updateHeight());
-    return () => window.removeEventListener('resize', () => updateHeight());
+    window.addEventListener('resize', updateHeight);
+    return () => window.removeEventListener('resize', updateHeight);
   }, [showMore, isCollapsing]);
 
   const handleToggle = () => {
@@ -107,16 +86,12 @@ export default function ProjectTimeline() {
           }
         />
 
-        {/* 2) Bouton "voir plus /moins" */}
+        {/* 2) Bouton "voir plus / moins" */}
         <div className="pt-5 mb-3 md:pt-0 md:mb-6 relative flex items-center w-full justify-center min-h-[4rem]">
           {showMore ? (
             <motion.button
               onClick={handleToggle}
-              className="
-                            z-10 flex items-center justify-center bg-gradient-to-br from-indigo-600 to-purple-600
-                            text-white rounded-full w-16 h-16 cursor-pointer
-                            duration-300
-                        "
+              className="z-10 flex items-center justify-center bg-gradient-to-br from-indigo-600 to-purple-600 text-white rounded-full w-16 h-16 cursor-pointer duration-300"
               whileHover={{ scale: 1.2 }}
               whileTap={{ scale: 0.85 }}
               transition={{ type: 'spring', stiffness: 300 }}
@@ -126,11 +101,7 @@ export default function ProjectTimeline() {
           ) : (
             <motion.button
               onClick={handleToggle}
-              className="
-                                z-10 flex items-center justify-center bg-gradient-to-br from-indigo-600 to-purple-600
-                                text-white rounded-full w-16 h-16 cursor-pointer
-                                duration-300
-                            "
+              className="z-10 flex items-center justify-center bg-gradient-to-br from-indigo-600 to-purple-600 text-white rounded-full w-16 h-16 cursor-pointer duration-300"
               whileHover={{ scale: 1.2 }}
               whileTap={{ scale: 0.85 }}
               transition={{ type: 'spring', stiffness: 300 }}
@@ -181,12 +152,14 @@ export default function ProjectTimeline() {
 
       {/* Modal */}
       <AnimatePresence initial={false}>
-        {selectedProject &&
-          React.createElement(getTypeModal(dictionary[selectedProject].type), {
-            item: dictionary[selectedProject],
-            onClose: () => setSelectedProject(null),
-            fields: [], // Add appropriate fields here
-          })}
+        {selectedProject && (
+          <DynamicModal
+            type={dictionary[selectedProject].type}
+            item={dictionary[selectedProject]}
+            onClose={() => setSelectedProject(null)}
+            fields={[]} // Ajoutez ici les champs appropriés
+          />
+        )}
       </AnimatePresence>
     </>
   );
@@ -219,11 +192,10 @@ function MiddleList({
               index={startIndex + i}
               offset={0}
               onSelect={onSelect}
-              totalCount={items.length + 2} // Ajuster selon la logique de reverseIndex
-              //add year each time we have a new year
+              totalCount={items.length + 2} // Ajustez selon la logique de reverseIndex
               textChildren={
                 item.date.split('-')[0] !==
-                items[i - 1]?.date.split('-')[0] && (
+                  items[i - 1]?.date.split('-')[0] && (
                   <>
                     <div className="pr-2 md:pr-0 w-1/2 text-2xl sm:text-5xl md:text-6xl uppercase tracking-wide leading-tight text-gray-200">
                       <span className="bg-gradient-to-tl from-indigo-500 via-purple-500 to-pink-600 bg-clip-text text-transparent">

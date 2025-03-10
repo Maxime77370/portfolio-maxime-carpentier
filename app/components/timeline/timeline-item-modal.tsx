@@ -2,7 +2,7 @@ import React from 'react';
 import { FaGithub, FaNetworkWired } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import { DictionaryItem } from './timeline-dict';
-import Image from "next/legacy/image";
+import Image from 'next/legacy/image';
 import { FaInfo } from 'react-icons/fa';
 
 const overlayVariants = {
@@ -40,7 +40,7 @@ function getDivField(item: DictionaryItem, field: keyof DictionaryItem) {
   if (!item[field]) return null;
 
   // Classe de base commune à la plupart des conteneurs
-  const baseClasses = "bg-white shadow-md rounded-lg p-4 my-1";
+  const baseClasses = 'bg-white shadow-md rounded-lg p-4 my-1';
 
   switch (field) {
     case 'description':
@@ -52,7 +52,9 @@ function getDivField(item: DictionaryItem, field: keyof DictionaryItem) {
       );
     case 'technologies':
       return (
-        <div className={`${baseClasses} flex flex-wrap gap-2 w-full justify-center`}>
+        <div
+          className={`${baseClasses} flex flex-wrap gap-2 w-full justify-center`}
+        >
           {item[field]?.split(',').map((tech, index) => (
             <span
               key={index}
@@ -135,7 +137,9 @@ function getDivField(item: DictionaryItem, field: keyof DictionaryItem) {
       );
     case 'title':
       return (
-        <header className={`${baseClasses} flex items-center justify-between gap-4`}>
+        <header
+          className={`${baseClasses} flex items-center justify-between gap-4`}
+        >
           <div className="flex items-center gap-4">
             <h3 className="text-2xl text-gray-900 font-bold">{item.title}</h3>
           </div>
@@ -146,7 +150,6 @@ function getDivField(item: DictionaryItem, field: keyof DictionaryItem) {
       return null;
   }
 }
-
 
 const EnhancedModalBase: React.FC<ModalProps> = ({ item, onClose, fields }) => {
   return (
@@ -176,14 +179,10 @@ const EnhancedModalBase: React.FC<ModalProps> = ({ item, onClose, fields }) => {
 
         {/* Parcours et rendu des champs définis */}
         {fields.map((field) => {
-          return (
-            <section key={field}>
-              {getDivField(item, field)}
-            </section>
-          );
+          return <section key={field}>{getDivField(item, field)}</section>;
         })}
       </motion.div>
-    </motion.div >
+    </motion.div>
   );
 };
 
