@@ -4,7 +4,7 @@ import React from 'react';
 import { FaGithub, FaNetworkWired } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import { DictionaryItem } from './timeline-dict';
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import { FaInfo } from 'react-icons/fa';
 
 const overlayVariants = {

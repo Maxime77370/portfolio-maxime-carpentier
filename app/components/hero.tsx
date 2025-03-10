@@ -2,7 +2,7 @@ import { motion, AnimatePresence, useAnimation } from 'framer-motion';
 import AnimatedBackground from './animated-background';
 import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';
-import Image from 'next/image';
+import Image from "next/legacy/image";
 
 // Images ou formes à afficher
 const shapes = [

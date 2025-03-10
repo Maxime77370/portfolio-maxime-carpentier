@@ -1,6 +1,6 @@
 import { useRouter, usePathname } from 'next/navigation';
 import React, { useState, useEffect, useRef } from 'react';
-import Image from 'next/image';
+import Image from "next/image";
 import { motion, AnimatePresence } from 'framer-motion';
 
 const buttonVariants = {

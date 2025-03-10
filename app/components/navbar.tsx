@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import LanguageSwitcher from './language-switcher';
 import { useTranslations } from 'next-intl';
 import { useState } from 'react';
@@ -70,7 +70,7 @@ export default function NavBar() {
             >
               {menuOpen ? (
                 // Icône "X" pour fermer
-                <svg
+                (<svg
                   className="h-6 w-6"
                   fill="none"
                   stroke="currentColor"
@@ -83,10 +83,10 @@ export default function NavBar() {
                     strokeWidth="2"
                     d="M6 18L18 6M6 6l12 12"
                   />
-                </svg>
+                </svg>)
               ) : (
                 // Icône hamburger
-                <svg
+                (<svg
                   className="h-6 w-6"
                   fill="none"
                   stroke="currentColor"
@@ -99,7 +99,7 @@ export default function NavBar() {
                     strokeWidth="2"
                     d="M4 6h16M4 12h16M4 18h16"
                   />
-                </svg>
+                </svg>)
               )}
             </button>
           </div>
@@ -127,7 +127,6 @@ export default function NavBar() {
           </div>
         </div>
       </div>
-
       {/* Menu mobile (affiché en slide-down) */}
       <AnimatePresence>
         {menuOpen && (

@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useRef, useState } from 'react';
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import { motion } from 'framer-motion';
 
 // --- Exemple de listes de technologies par catégorie
@@ -108,7 +108,7 @@ function Column({ title, data, initialScale }: ColumnProps) {
         <React.Fragment>
           {data.map((tech: TechProps) => (
             // Animation de chaque cercle (apparition, scale)
-            <motion.div
+            (<motion.div
               key={tech.name}
               className="flex flex-col items-center"
               variants={circleVariants}
@@ -124,11 +124,10 @@ function Column({ title, data, initialScale }: ColumnProps) {
                   />
                 </div>
               </div>
-
               <p className="mt-1 sm:mt-2 text-white text-xs sm:text-sm md:text-lg whitespace-nowrap text-center">
                 {tech.name}
               </p>
-            </motion.div>
+            </motion.div>)
           ))}
         </React.Fragment>
       </motion.div>
@@ -168,9 +167,13 @@ export default function LanguageGrid() {
             width={1200}
             height={800}
             className="max-w-none w-[180vw] md:w-[100%] opacity-50"
-            // eslint-disable-next-line
-            // @ts-ignore
-            ref={containerRef}
+            onLoadingComplete={() => {
+              if (containerRef.current && window.innerWidth < 768) {
+                setContainerHeight(containerRef.current.clientWidth);
+              } else {
+                setContainerHeight('100%');
+              }
+            }}
           />
         </div>
         {/* Overlay semi-transparent par-dessus l'image (non affecté par la rotation) */}
