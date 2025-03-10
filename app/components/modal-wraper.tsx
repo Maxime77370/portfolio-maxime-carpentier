@@ -19,17 +19,14 @@ export interface ModalWrapperProps extends ModalComponentProps {
   type: string;
 }
 
-const modals: Record<string, React.FC<ModalWrapperProps>> = {
+const modals: Record<string, React.FC<ModalComponentProps>> = {
   project: ProjectModal,
   school: SchoolModal,
   job: JobModal,
   diploma: DiplomaModal,
 };
 
-const ModalWrapper: React.FC<ModalComponentProps & { type: string }> = ({
-  type,
-  ...props
-}) => {
+const ModalWrapper: React.FC<ModalWrapperProps> = ({ type, ...props }) => {
   const ModalComponent = modals[type] || ProjectModal;
   return <ModalComponent {...props} />;
 };
