@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useRef, useState } from 'react';
-import Image from "next/legacy/image";
+import Image from "next/image";
 import { motion } from 'framer-motion';
 
 // --- Exemple de listes de technologies par catégorie
@@ -9,32 +9,32 @@ const frontEnd = [
   { name: 'HTML', logo: '/logos/html.webp' },
   { name: 'CSS', logo: '/logos/css.webp' },
   { name: 'JavaScript', logo: '/logos/js.webp' },
-  { name: 'TypeScript', logo: '/logos/typescript.png' },
+  { name: 'TypeScript', logo: '/logos/typescript.webp' },
   { name: 'React', logo: '/logos/react.jpeg' },
-  { name: 'Bootstrap', logo: '/logos/bootstrap.png' },
-  { name: 'Next.js', logo: '/logos/nextjs.png' },
-  { name: 'NestJS', logo: '/logos/nestjs.png' },
-  { name: 'Tailwind CSS', logo: '/logos/tailwind.png' },
+  { name: 'Bootstrap', logo: '/logos/bootstrap.webp' },
+  { name: 'Next.js', logo: '/logos/nextjs.webp' },
+  { name: 'NestJS', logo: '/logos/nestjs.webp' },
+  { name: 'Tailwind CSS', logo: '/logos/tailwind.webp' },
 ] as TechProps[];
 
 const backEnd = [
   { name: 'Node.js', logo: '/logos/node.webp' },
-  { name: 'Express', logo: '/logos/express.png' },
-  { name: 'Python', logo: '/logos/python.png' },
-  { name: 'Java', logo: '/logos/java.png' },
+  { name: 'Express', logo: '/logos/express.webp' },
+  { name: 'Python', logo: '/logos/python.webp' },
+  { name: 'Java', logo: '/logos/java.webp' },
   { name: 'Prisma', logo: '/logos/prisma.svg' },
-  { name: 'GraphQL', logo: '/logos/graphql.png' },
+  { name: 'GraphQL', logo: '/logos/graphql.webp' },
   { name: 'Apollo', logo: '/logos/apollo.jpeg' },
-  { name: 'REST API', logo: '/logos/rest-api.png' },
-  { name: 'Socket.io', logo: '/logos/socketio.png' },
+  { name: 'REST API', logo: '/logos/rest-api.webp' },
+  { name: 'Socket.io', logo: '/logos/socketio.webp' },
 ] as TechProps[];
 
 const devOps = [
-  { name: 'Docker', logo: '/logos/docker.jpeg' },
-  { name: 'GitHub', logo: '/logos/github-action.png' },
-  { name: 'SQL', logo: '/logos/sql.png' },
-  { name: 'MongoDB', logo: '/logos/mongo-db.png' },
-  { name: 'PostgreSQL', logo: '/logos/postgresql.png' },
+  { name: 'Docker', logo: '/logos/docker.webp' },
+  { name: 'GitHub', logo: '/logos/github-action.webp' },
+  { name: 'SQL', logo: '/logos/sql.webp' },
+  { name: 'MongoDB', logo: '/logos/mongo-db.webp' },
+  { name: 'PostgreSQL', logo: '/logos/postgresql.webp' },
 ] as TechProps[];
 
 type TechProps = {
@@ -167,13 +167,9 @@ export default function LanguageGrid() {
             width={1200}
             height={800}
             className="max-w-none w-[180vw] md:w-[100%] opacity-50"
-            onLoadingComplete={() => {
-              if (containerRef.current && window.innerWidth < 768) {
-                setContainerHeight(containerRef.current.clientWidth);
-              } else {
-                setContainerHeight('100%');
-              }
-            }}
+            // eslint-disable-next-line
+            // @ts-ignore
+            ref={containerRef}
           />
         </div>
         {/* Overlay semi-transparent par-dessus l'image (non affecté par la rotation) */}
