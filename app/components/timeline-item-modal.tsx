@@ -42,7 +42,7 @@ function getDivField(item: DictionaryItem, field: keyof DictionaryItem) {
   if (!item[field]) return null;
 
   // Classe de base commune à la plupart des conteneurs
-  const baseClasses = "bg-white shadow-md rounded-lg p-4 my-2";
+  const baseClasses = "bg-white shadow-md rounded-lg p-4 my-1";
 
   switch (field) {
     case 'description':
@@ -179,13 +179,13 @@ const EnhancedModalBase: React.FC<ModalProps> = ({ item, onClose, fields }) => {
         {/* Parcours et rendu des champs définis */}
         {fields.map((field) => {
           return (
-            <section key={field} className="mb-2">
+            <section key={field}>
               {getDivField(item, field)}
             </section>
           );
         })}
       </motion.div>
-    </motion.div>
+    </motion.div >
   );
 };
 
