@@ -10,7 +10,7 @@ const frontEnd = [
   { name: 'CSS', logo: '/logos/css.webp' },
   { name: 'JavaScript', logo: '/logos/js.webp' },
   { name: 'TypeScript', logo: '/logos/typescript.webp' },
-  { name: 'React', logo: '/logos/react.jpeg' },
+  { name: 'React', logo: '/logos/react.webp' },
   { name: 'Bootstrap', logo: '/logos/bootstrap.webp' },
   { name: 'Next.js', logo: '/logos/nextjs.webp' },
   { name: 'NestJS', logo: '/logos/nestjs.webp' },
