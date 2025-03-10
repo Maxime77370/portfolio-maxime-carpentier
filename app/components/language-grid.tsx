@@ -24,7 +24,7 @@ const backEnd = [
   { name: 'Java', logo: '/logos/java.webp' },
   { name: 'Prisma', logo: '/logos/prisma.svg' },
   { name: 'GraphQL', logo: '/logos/graphql.webp' },
-  { name: 'Apollo', logo: '/logos/apollo.jpeg' },
+  { name: 'Apollo', logo: '/logos/apollo.webp' },
   { name: 'REST API', logo: '/logos/rest-api.webp' },
   { name: 'Socket.io', logo: '/logos/socketio.webp' },
 ] as TechProps[];
