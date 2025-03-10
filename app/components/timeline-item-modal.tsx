@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react';
 import { FaGithub, FaNetworkWired } from 'react-icons/fa';
 import { motion } from 'framer-motion';

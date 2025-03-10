@@ -1,3 +1,5 @@
+"use client";
+
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from "next/legacy/image";
 import { useTranslations } from 'next-intl';

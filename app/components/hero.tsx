@@ -1,3 +1,5 @@
+"use client";
+
 import { motion, AnimatePresence, useAnimation } from 'framer-motion';
 import AnimatedBackground from './animated-background';
 import { useTranslations } from 'next-intl';
