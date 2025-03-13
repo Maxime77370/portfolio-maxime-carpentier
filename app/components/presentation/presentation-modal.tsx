@@ -1,5 +1,5 @@
 import React from 'react';
-import Image from "next/legacy/image";
+import Image from 'next/legacy/image';
 import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import {
@@ -246,7 +246,6 @@ const PortfolioModal: React.FC<PortfolioModalProps> = ({ onClose }) => {
                 <motion.li
                   className="flex items-center px-2 gap-2 rounded-lg"
                   variants={itemVariants}
-                  whileHover={{ scale: 1.05 }}
                 >
                   <FaServer className="text-indigo-600" />
                   <span>{t('expertise.item1')}</span>
@@ -254,7 +253,6 @@ const PortfolioModal: React.FC<PortfolioModalProps> = ({ onClose }) => {
                 <motion.li
                   className="flex items-center px-2 gap-2 rounded-lg"
                   variants={itemVariants}
-                  whileHover={{ scale: 1.05 }}
                 >
                   <FaDatabase className="text-indigo-600" />
                   <span>{t('expertise.item2')}</span>
@@ -262,7 +260,6 @@ const PortfolioModal: React.FC<PortfolioModalProps> = ({ onClose }) => {
                 <motion.li
                   className="flex items-center px-2 gap-2 rounded-lg"
                   variants={itemVariants}
-                  whileHover={{ scale: 1.05 }}
                 >
                   <FaUsers className="text-indigo-600" />
                   <span>{t('expertise.item3')}</span>
